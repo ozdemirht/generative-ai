@@ -37,7 +37,7 @@ Can we update the first set of requirements with additional requirements?
 
 <br>**GPT’s Output**:
 
-![EnsureUser](./assets/CGPT-Verify-1.png)
+![EnsureUser](./assets/CGPT-Verify-1.png) 
 
 ```
 Feature: User Authentication
