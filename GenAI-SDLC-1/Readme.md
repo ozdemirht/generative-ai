@@ -133,25 +133,19 @@ This directory contanins detailed information for [GenAI-Driven SDLC](https://oz
 
 
 <br>Prompt: Generate manual test cases with test case id, test case description, preconditions, test data, test steps, expected results, actual results, pass/fail status, and comments fields for these scenarios
-
-
-<br>Response:
-
+<br>**Response**:
 ![ReportsItsObjective](./assets/Ack-40.png)
 
-Generates the following manual test cases.
-
+Generated the following manual test cases.
 
 ![ManualTestCases](./assets/CGPT-Manual-Test-Cases.png)
 
-And
+And, suggested some file formats that it can generate these test cases.
 
 ![InstructionsForExport](./assets/Instructions-41.png)
 
 <br>**Prompt**: Generate downloadable Excel file.
-
 <br>**Response**:
-
 *Your manual test cases are ready for download: [Download Excel file](./assets/user_authentication_test_cases.xlsx)*
 
 Summary
