@@ -150,8 +150,8 @@ Feature: User Authentication
 
 ![Assumptions](./assets/Ack-30.png)
 
+$\colorbox{green}{{\color{black}{This\ is\ a\ Big\ Title}}}$
 
-{% include jira_stories.md %}
  
 
 <br>**Prompt**: Export these JIRA stories as JIRA JSON import format.
