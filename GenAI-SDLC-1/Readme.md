@@ -403,6 +403,12 @@ Can we generate test automation code?
 <br>**GPT’s Output**:
 Before generating any code, GPT answers that the RESTful API will have the following endpoints. This will be API-Under-Test.
 
+![AssumptionForTest](./assets/CGPT-Test-1.png)
+
+Folder structure
+![AssumptionForTest](./assets/CGPT-Test-2.png)
+
+
 </details>
 
 
