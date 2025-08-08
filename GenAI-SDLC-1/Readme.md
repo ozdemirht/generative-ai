@@ -408,6 +408,17 @@ Before generating any code, GPT answers that the RESTful API will have the follo
 Folder structure
 ![Folders](./assets/CGPT-Test-2.png)
 
+requirements.txt
+```txt
+robotframework
+robotframework-requests
+```
+
+Install with:
+```bash
+pip install -r requirements.txt
+```
+
 
 </details>
 
