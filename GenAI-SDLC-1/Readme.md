@@ -3,6 +3,13 @@ GenAI-SDLC-1
 This directory contanins detailed information for [GenAI-Driven SDLC](https://ozdemirtim.medium.com/d7b02c673bb0)
 
 
+Can we generate requirements in Gherkin format?
+---
+
+<br>**Prompt**: Please translate the following requirement to Gherkin format. “User enters user id and password. If the user is invalid or password is invalid, then the system gives an error message. System locks the account 15 mins if three consecutive attempts fail”
+
+<br>**GPT’s Output**:
+
 Can GPT generate JIRA stories?
 ---
 
