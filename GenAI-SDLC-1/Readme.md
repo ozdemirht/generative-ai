@@ -81,6 +81,60 @@ Can GPT add some use cases to the existing set of requirements?
 
 ![ValidatingMore](./assets/CGPT-Verify-2.png) 
 
+```
+Feature: User Authentication
+
+  Scenario: Successful login with valid credentials
+    Given the user navigates to the login page
+    When the user enters a valid user ID and valid password
+    Then the user should be logged in successfully
+
+  Scenario: Failed login with invalid user ID or password
+    Given the user navigates to the login page
+    When the user enters an invalid user ID or invalid password
+    Then the system should display an error message
+
+  Scenario: Account lockout after 3 consecutive failed login attempts
+    Given the user navigates to the login page
+    When the user enters invalid credentials 3 times in a row
+    Then the system should lock the account for 15 minutes
+
+  Scenario: Attempt to login during lockout period
+    Given the user's account is locked
+    When the user tries to log in with valid credentials
+    Then the system should inform the user that the account is locked
+    And the user should not be allowed to log in
+
+  Scenario: Unlock account after lock duration expires
+    Given the user's account is locked due to 3 failed login attempts
+    And 15 minutes have passed since the account was locked
+    When the user attempts to log in with valid credentials
+    Then the user should be logged in successfully
+
+  Scenario: Admin unlocks account before lock duration expires
+    Given the user's account is locked
+    And an admin manually unlocks the account
+    When the user logs in with valid credentials
+    Then the user should be logged in successfully
+
+  Scenario: CAPTCHA required after multiple failed login attempts
+    Given the user has failed to log in 2 times
+    When the user attempts to log in a third time
+    Then the system should require CAPTCHA verification
+
+  Scenario: Reset password using 'Forgot Password' feature
+    Given the user is on the login page
+    When the user clicks on the "Forgot Password" link
+    And enters a valid registered email or user ID
+    Then the system should send a password reset link to the user's email
+
+  Scenario: Attempt password reset with unregistered email or user ID
+    Given the user is on the "Forgot Password" page
+    When the user enters an unregistered email or user ID
+    Then the system should display an error indicating the account does not exist
+
+```
+
 
 Can GPT generate JIRA stories?
 ---
