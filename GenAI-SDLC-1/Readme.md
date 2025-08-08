@@ -150,7 +150,6 @@ Feature: User Authentication
 
 ![Assumptions](./assets/Ack-30.png)
 
-$\colorbox{green}{{\color{black}{This\ is\ a\ Big\ Title}}}$
 
  
 
