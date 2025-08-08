@@ -406,6 +406,7 @@ Before generating any code, GPT answers that the RESTful API will have the follo
 ![AssumptionForTest](./assets/CGPT-Test-1.png)
 
 Folder structure
+
 ![Folders](./assets/CGPT-Test-2.png)
 
 requirements.txt
@@ -419,6 +420,67 @@ Install with:
 pip install -r requirements.txt
 ```
 
+variables/AuthVariables.robot
+```
+*** Variables ***
+${BASE_URL}           http://localhost:8000
+${LOGIN_ENDPOINT}     /api/login
+${RESET_ENDPOINT}     /api/forgot-password
+${UNLOCK_ENDPOINT}    /api/admin/unlock
+
+${VALID_USER}         user@example.com
+${VALID_PASS}         correct_password
+${INVALID_USER}       invalid@example.com
+${INVALID_PASS}       wrong_password
+```
+
+resources/AuthKeywords.robot
+```
+*** Settings ***
+Library    RequestsLibrary
+Resource   ../variables/AuthVariables.robot
+
+*** Keywords ***
+
+Create Auth Session
+    Create Session    auth    ${BASE_URL}
+
+Login With Credentials    ${user}    ${password}
+    ${payload}=    Create Dictionary    user_id=${user}    password=${password}
+    ${response}=   Post Request    auth    ${LOGIN_ENDPOINT}    json=${payload}
+    Set Suite Variable    ${LOGIN_RESPONSE}    ${response}
+    [Return]    ${response}
+
+Verify Login Success
+    Should Be Equal As Integers    ${LOGIN_RESPONSE.status_code}    200
+    Dictionary Should Contain Key    ${LOGIN_RESPONSE.json()}    token
+
+Verify Login Failure
+    Should Be Equal As Integers    ${LOGIN_RESPONSE.status_code}    401
+
+Simulate Invalid Login Attempts    ${user}    ${password}    ${count}
+    FOR    ${i}    IN RANGE    ${count}
+        Login With Credentials    ${user}    ${password}
+    END
+
+Unlock Account As Admin    ${user}
+    ${payload}=    Create Dictionary    user_id=${user}
+    ${response}=   Post Request    auth    ${UNLOCK_ENDPOINT}    json=${payload}
+    Should Be Equal As Integers    ${response.status_code}    200
+
+Request Password Reset    ${user}
+    ${payload}=    Create Dictionary    user_id=${user}
+    ${response}=   Post Request    auth    ${RESET_ENDPOINT}    json=${payload}
+    Set Suite Variable    ${RESET_RESPONSE}    ${response}
+    [Return]    ${response}
+
+Verify Password Reset Success
+    Should Be Equal As Integers    ${RESET_RESPONSE.status_code}    200
+
+Verify Password Reset Failure
+    Should Be Equal As Integers    ${RESET_RESPONSE.status_code}    404
+
+```
 
 </details>
 
