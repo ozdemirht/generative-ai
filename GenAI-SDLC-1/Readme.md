@@ -150,6 +150,7 @@ Feature: User Authentication
 
 ![Assumptions](./assets/Ack-30.png)
 
+Markdown file is in [jira_stories.md](./assets/jira_stories.md)
 ```
 # JIRA Stories
 
