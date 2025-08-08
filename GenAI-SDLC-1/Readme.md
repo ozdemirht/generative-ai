@@ -144,6 +144,7 @@ Can GPT generate JIRA stories?
 
 ![Assumptions](./assets/Ack-30.png)
 
+[./assets/jira_stories.md]
 
 <br>**Prompt**: Export these JIRA stories as JIRA JSON import format.
 <br>**GPT’s Output**:
