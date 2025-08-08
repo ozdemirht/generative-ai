@@ -526,6 +526,6 @@ And, GPT generated instructions on how to run.
 Summary
 -------
 <br> GPT was able to generate useful artifacts, that will increase the productivity. 
-<br> Engineer needs to review and correct if needed. But it seems, GPT can do lots of **undifferentiated heavy lifting** today for us. This will also have popsitive impact to **quality** dimension. 
+<br> Engineer needs to review and correct if needed. But it seems, GPT can do lots of **undifferentiated heavy lifting** today for us. This will also have positive impact to **quality** dimension. 
 
 
