@@ -10,7 +10,7 @@ Can we generate requirements in Gherkin format?
 
 <br>**GPT’s Output**:
 
-'''
+```
 
 Feature: User Authentication
 
@@ -29,7 +29,7 @@ Feature: User Authentication
     When the user enters invalid credentials 3 times in a row
     Then the system should lock the account for 15 minutes
 
-'''
+```
 
 Can GPT generate JIRA stories?
 ---
