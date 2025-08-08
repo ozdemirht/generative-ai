@@ -2,8 +2,15 @@ GenAI-SDLC-1
 
 This directory contanins detailed information for [GenAI-Driven SDLC](https://ozdemirtim.medium.com/d7b02c673bb0)
 
-<br>**Prompt**: export these JIRA stories as JIRA JSON import format
 
+Can GPT generate JIRA stories?
+---
+
+<br>**Prompt**: Generate JIRA stories having summary, description, and acceptance criteria for each scenario.
+<br>**GPT’s Output**:
+
+
+<br>**Prompt**: Export these JIRA stories as JIRA JSON import format.
 <br>**GPT’s Output**:
 
 ![Assumptions](./assets/Assumption-31.png)
