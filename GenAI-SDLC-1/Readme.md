@@ -79,6 +79,9 @@ Can GPT add some use cases to the existing set of requirements?
 <br>**Prompt**: Could you also add edge cases?
 <br>**GPT’s Output**:
 
+![ValidatingMore](./assets/CGPT-Verify-2.png) 
+
+
 Can GPT generate JIRA stories?
 ---
 
