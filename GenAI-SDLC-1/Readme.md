@@ -131,9 +131,13 @@ This directory contanins detailed information for [GenAI-Driven SDLC](https://oz
 
 ![Instructions](./assets/Instructions-31.png)
 
+Can we generate test automation code?
+-----
 
 <br>Prompt: Generate manual test cases with test case id, test case description, preconditions, test data, test steps, expected results, actual results, pass/fail status, and comments fields for these scenarios
+
 <br>**Response**:
+
 ![ReportsItsObjective](./assets/Ack-40.png)
 
 Generated the following manual test cases.
