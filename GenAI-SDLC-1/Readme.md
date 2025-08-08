@@ -6,7 +6,7 @@ Introduction
 ---
 <br> Exploring which steps of SDLC that GPT can help and what SDLC articfacts GPT can generate. 
 <br> This experiment is assuming a human-in-the-loop process model and exploring how GPT will augment software develeper in SDLC process.
-<br> There are tools in the market based on Foundation Models but (_today_) these tools are focusing on sub set of SDLC process. 
+<br> There are tools in the market based on Foundation Models but (_today_) these tools are focusing on subset of SDLC process. 
 
 <details>
 <summary>Can we generate requirements in Gherkin format?</summary>
