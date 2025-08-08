@@ -479,8 +479,46 @@ Verify Password Reset Success
 
 Verify Password Reset Failure
     Should Be Equal As Integers    ${RESET_RESPONSE.status_code}    404
-
 ```
+
+AuthSuite.robot
+```
+*** Settings ***
+Suite Setup     Create Auth Session
+Resource        resources/AuthKeywords.robot
+
+*** Test Cases ***
+
+Login With Valid Credentials Should Succeed
+    Login With Credentials    ${VALID_USER}    ${VALID_PASS}
+    Verify Login Success
+
+Login With Invalid Credentials Should Fail
+    Login With Credentials    ${INVALID_USER}    ${INVALID_PASS}
+    Verify Login Failure
+
+Lock Account After Three Failed Attempts
+    Simulate Invalid Login Attempts    ${VALID_USER}    ${INVALID_PASS}    3
+    Login With Credentials    ${VALID_USER}    ${VALID_PASS}
+    Should Be Equal As Integers    ${LOGIN_RESPONSE.status_code}    423  # Locked
+
+Admin Should Unlock Locked Account
+    Unlock Account As Admin    ${VALID_USER}
+    Login With Credentials    ${VALID_USER}    ${VALID_PASS}
+    Verify Login Success
+
+Password Reset With Valid User Should Succeed
+    Request Password Reset    ${VALID_USER}
+    Verify Password Reset Success
+
+Password Reset With Invalid User Should Fail
+    Request Password Reset    ${INVALID_USER}
+    Verify Password Reset Failure
+```
+
+And, generates instructions on how to run.
+ 
+![Folders](./assets/CGPT-Test-3.png)
 
 </details>
 
