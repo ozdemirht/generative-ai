@@ -31,6 +31,45 @@ Feature: User Authentication
 
 ```
 
+Can we update the first set of requirements with additional requirements?
+---
+<br>**Prompt**: Could you also add scenarios for unlocking and forgot password?
+
+<br>**GPT’s Output**:
+
+![EnsureUser](./assets/CGPT-Verify-1.png)
+
+```
+Feature: User Authentication
+
+  Scenario: Successful login with valid credentials
+    Given the user navigates to the login page
+    When the user enters a valid user ID and valid password
+    Then the user should be logged in successfully
+
+  Scenario: Failed login with invalid user ID or password
+    Given the user navigates to the login page
+    When the user enters an invalid user ID or invalid password
+    Then the system should display an error message
+
+  Scenario: Account lockout after 3 consecutive failed login attempts
+    Given the user navigates to the login page
+    When the user enters invalid credentials 3 times in a row
+    Then the system should lock the account for 15 minutes
+
+  Scenario: Unlock account after lock duration expires
+    Given the user's account is locked due to 3 failed login attempts
+    And 15 minutes have passed since the account was locked
+    When the user attempts to log in with valid credentials
+    Then the user should be logged in successfully
+
+  Scenario: Reset password using 'Forgot Password' feature
+    Given the user is on the login page
+    When the user clicks on the "Forgot Password" link
+    And enters a valid registered email or user ID
+    Then the system should send a password reset link to the user's email
+```
+
 Can GPT generate JIRA stories?
 ---
 
