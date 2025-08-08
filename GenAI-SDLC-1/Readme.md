@@ -3,9 +3,12 @@ GenAI-SDLC-1
 This directory contanins detailed information for [GenAI-Driven SDLC](https://ozdemirtim.medium.com/d7b02c673bb0)
 
 <br>Prompt: export these JIRA stories as JIRA JSON import format
+
 <br>Response:
 
 ![Assumptions](./assets/Assumption-31.png)
 
+
 <br> Also gave instructions on how to upload to JIRA. 
-![Assumptions](./assets/Instructions-31.png)
+
+![Instructions](./assets/Instructions-31.png)
