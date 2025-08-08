@@ -150,8 +150,10 @@ Feature: User Authentication
 
 ![Assumptions](./assets/Ack-30.png)
 
-<div style=" background-color: lightblue; color:black;">
+<div style="background-color:lightblue;color:black;">
+<span style="color:red;">your text here 
 	Hello
+</span>
 </div>
  
 
