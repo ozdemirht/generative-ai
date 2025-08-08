@@ -10,6 +10,27 @@ Can we generate requirements in Gherkin format?
 
 <br>**GPT’s Output**:
 
+'''
+
+Feature: User Authentication
+
+  Scenario: Successful login with valid credentials
+    Given the user navigates to the login page
+    When the user enters a valid user ID and valid password
+    Then the user should be logged in successfully
+
+  Scenario: Failed login with invalid user ID or password
+    Given the user navigates to the login page
+    When the user enters an invalid user ID or invalid password
+    Then the system should display an error message
+
+  Scenario: Account lockout after 3 consecutive failed login attempts
+    Given the user navigates to the login page
+    When the user enters invalid credentials 3 times in a row
+    Then the system should lock the account for 15 minutes
+
+'''
+
 Can GPT generate JIRA stories?
 ---
 
