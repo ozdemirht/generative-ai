@@ -5,5 +5,5 @@ This directory contanins detailed information for [GenAI-Driven SDLC](https://oz
 Prompt: export these JIRA stories as JIRA JSON import format
 Response:
 
-![Assumptions](/assets/Assumption-31.png)
+![Assumptions](./assets/Assumption-31.png)
 
