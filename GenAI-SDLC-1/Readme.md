@@ -148,11 +148,14 @@ And
 
 ![InstructionsForExport](./assets/Instructions-41.png)
 
-<br>*Prompt*:
+<br>**Prompt**: Generate downloadable Excel file.
 
-<br>Response:
+<br>**Response**:
 
-Your manual test cases are ready for download: [Download Excel file](./assets/user_authentication_test_cases.xlsx)
+*Your manual test cases are ready for download: [Download Excel file](./assets/user_authentication_test_cases.xlsx)*
+
+Summary
+-------
 
 
 
