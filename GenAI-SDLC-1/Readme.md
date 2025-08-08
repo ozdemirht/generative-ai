@@ -139,8 +139,8 @@ Feature: User Authentication
 ```
 </details>
 
-Can GPT generate JIRA stories?
----
+<details>
+<summary>Can GPT generate JIRA stories?</summary>
 
 <br>**Prompt**: Generate JIRA stories having summary, description, and acceptance criteria for each scenario.
 <br>**GPT’s Output**:
@@ -277,11 +277,12 @@ Can GPT generate JIRA stories?
 
 ![Instructions](./assets/Instructions-31.png)
 
-Can GPT generate manual test cases for these scenarios?
------
+</details>
+
+<details>
+<summary>Can GPT generate manual test cases for these scenarios?</summary>
 
 <br>Prompt: Generate manual test cases with test case id, test case description, preconditions, test data, test steps, expected results, actual results, pass/fail status, and comments fields for these scenarios
-
 <br>**GPT’s Output**:
 
 ![ReportsItsObjective](./assets/Ack-40.png)
@@ -298,6 +299,7 @@ And, suggested some file formats that it can generate these test cases.
 <br>**GPT’s Output**:
 *Your manual test cases are ready for download: [Download Excel file](./assets/user_authentication_test_cases.xlsx)*
 
+</details>
 
 <details>
 <summary>
