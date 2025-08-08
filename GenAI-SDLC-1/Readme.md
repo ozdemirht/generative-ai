@@ -131,7 +131,7 @@ This directory contanins detailed information for [GenAI-Driven SDLC](https://oz
 
 ![Instructions](./assets/Instructions-31.png)
 
-Can we generate test automation code?
+Can GPT generate manual test cases for these scenarios?
 -----
 
 <br>Prompt: Generate manual test cases with test case id, test case description, preconditions, test data, test steps, expected results, actual results, pass/fail status, and comments fields for these scenarios
@@ -151,6 +151,12 @@ And, suggested some file formats that it can generate these test cases.
 <br>**Prompt**: Generate downloadable Excel file.
 <br>**Response**:
 *Your manual test cases are ready for download: [Download Excel file](./assets/user_authentication_test_cases.xlsx)*
+
+
+
+Can we generate test automation code?
+-----
+
 
 Summary
 -------
