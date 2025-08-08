@@ -409,7 +409,7 @@ Folder structure
 
 ![Folders](./assets/CGPT-Test-2.png)
 
-requirements.txt
+**requirements.txt**
 ```txt
 robotframework
 robotframework-requests
@@ -420,7 +420,7 @@ Install with:
 pip install -r requirements.txt
 ```
 
-variables/AuthVariables.robot
+**variables/AuthVariables.robot**
 ```
 *** Variables ***
 ${BASE_URL}           http://localhost:8000
@@ -434,7 +434,7 @@ ${INVALID_USER}       invalid@example.com
 ${INVALID_PASS}       wrong_password
 ```
 
-resources/AuthKeywords.robot
+**resources/AuthKeywords.robot**
 ```
 *** Settings ***
 Library    RequestsLibrary
@@ -481,7 +481,7 @@ Verify Password Reset Failure
     Should Be Equal As Integers    ${RESET_RESPONSE.status_code}    404
 ```
 
-AuthSuite.robot
+**AuthSuite.robot**
 ```
 *** Settings ***
 Suite Setup     Create Auth Session
@@ -516,8 +516,8 @@ Password Reset With Invalid User Should Fail
     Verify Password Reset Failure
 ```
 
-And, generates instructions on how to run.
- 
+And, GPT generated instructions on how to run.
+
 ![Folders](./assets/CGPT-Test-3.png)
 
 </details>
