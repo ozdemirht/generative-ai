@@ -70,6 +70,8 @@ Feature: User Authentication
     Then the system should send a password reset link to the user's email
 ```
 
+![AskingMore](./assets/CGPT-Instructions-1.png) 
+
 Can GPT generate JIRA stories?
 ---
 
