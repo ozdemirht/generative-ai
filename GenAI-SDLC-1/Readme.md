@@ -33,10 +33,10 @@ Feature: User Authentication
 ```
 </details>
 
-Can we update the first set of requirements with additional requirements?
----
-<br>**Prompt**: Could you also add scenarios for unlocking and forgot password?
+<details>
+<summary>Can we update the first set of requirements with additional requirements?</summary>
 
+<br>**Prompt**: Could you also add scenarios for unlocking and forgot password?
 <br>**GPT’s Output**:
 
 ![EnsureUser](./assets/CGPT-Verify-1.png) 
@@ -74,9 +74,10 @@ Feature: User Authentication
 
 ![AskingMore](./assets/CGPT-Instructions-1.png) 
 
+</details>
 
-Can GPT add some use cases to the existing set of requirements?
----
+<details>
+<summary>Can GPT add some use cases to the existing set of requirements?</summary>
 
 <br>**Prompt**: Could you also add edge cases?
 <br>**GPT’s Output**:
@@ -136,7 +137,7 @@ Feature: User Authentication
     Then the system should display an error indicating the account does not exist
 
 ```
-
+</details>
 
 Can GPT generate JIRA stories?
 ---
