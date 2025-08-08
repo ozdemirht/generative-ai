@@ -234,6 +234,10 @@ Markdown file is in [jira_stories.md](./assets/jira_stories.md)
 - When user requests a password reset  
 - Then system shows "No account found with this email" message
 ``` 
+</details>
+
+<details>
+<summary>Can we import these stories to JIRA?</summary>
 
 <br>**Prompt**: Export these JIRA stories as JIRA JSON import format.
 <br>**GPT’s Output**:
@@ -362,6 +366,9 @@ Markdown file is in [jira_stories.md](./assets/jira_stories.md)
 <br> Also gave instructions on how to upload to JIRA. 
 
 ![Instructions](./assets/Instructions-31.png)
+
+<br>
+Tool definition in Model Context Protocol (MCP) allows JIRA-API call to add these stories to JIRA. 
 
 </details>
 
