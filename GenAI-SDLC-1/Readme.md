@@ -4,7 +4,7 @@ This directory contanins detailed information for [GenAI-Driven SDLC](https://oz
 
 <br>**Prompt**: export these JIRA stories as JIRA JSON import format
 
-<br>Response:
+<br>**GPT’s Output**:
 
 ![Assumptions](./assets/Assumption-31.png)
 
@@ -136,7 +136,7 @@ Can GPT generate manual test cases for these scenarios?
 
 <br>Prompt: Generate manual test cases with test case id, test case description, preconditions, test data, test steps, expected results, actual results, pass/fail status, and comments fields for these scenarios
 
-<br>**Response**:
+<br>**GPT’s Output**:
 
 ![ReportsItsObjective](./assets/Ack-40.png)
 
@@ -149,13 +149,18 @@ And, suggested some file formats that it can generate these test cases.
 ![InstructionsForExport](./assets/Instructions-41.png)
 
 <br>**Prompt**: Generate downloadable Excel file.
-<br>**Response**:
+<br>**GPT’s Output**:
 *Your manual test cases are ready for download: [Download Excel file](./assets/user_authentication_test_cases.xlsx)*
 
 
 
 Can we generate test automation code?
 -----
+
+<br>**Prompt**: could you please generate automated test skeletons in robot framework
+
+<br>**GPT’s Output**:
+Before generating any code, GPT answers that the RESTful API will have the following endpoints. This will be API-Under-Test.
 
 
 Summary
