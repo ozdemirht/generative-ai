@@ -150,7 +150,9 @@ Feature: User Authentication
 
 ![Assumptions](./assets/Ack-30.png)
 
-[./assets/jira_stories.md]
+
+{% include jira_stories.md %}
+
 
 <br>**Prompt**: Export these JIRA stories as JIRA JSON import format.
 <br>**GPT’s Output**:
