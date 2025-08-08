@@ -72,6 +72,13 @@ Feature: User Authentication
 
 ![AskingMore](./assets/CGPT-Instructions-1.png) 
 
+
+Can GPT add some use cases to the existing set of requirements?
+---
+
+<br>**Prompt**: Could you also add edge cases?
+<br>**GPT’s Output**:
+
 Can GPT generate JIRA stories?
 ---
 
