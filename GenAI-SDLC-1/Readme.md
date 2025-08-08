@@ -368,7 +368,7 @@ Markdown file is in [jira_stories.md](./assets/jira_stories.md)
 ![Instructions](./assets/Instructions-31.png)
 
 <br>
-Tool definition in Model Context Protocol (MCP) allows JIRA-API call to add these stories to JIRA. 
+Tool definition in Model Context Protocol (MCP) allows [JIRA-API](https://support.atlassian.com/rovo/docs/getting-started-with-the-atlassian-remote-mcp-server/) call to add these stories to JIRA. 
 
 </details>
 
