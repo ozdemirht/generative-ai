@@ -9,6 +9,8 @@ Can GPT generate JIRA stories?
 <br>**Prompt**: Generate JIRA stories having summary, description, and acceptance criteria for each scenario.
 <br>**GPT’s Output**:
 
+![Assumptions](./assets/Ack-30.png)
+
 
 <br>**Prompt**: Export these JIRA stories as JIRA JSON import format.
 <br>**GPT’s Output**:
