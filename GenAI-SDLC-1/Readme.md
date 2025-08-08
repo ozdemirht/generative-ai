@@ -144,4 +144,17 @@ Generates the following manual test cases.
 
 ![ManualTestCases](./assets/CGPT-Manual-Test-Cases.png)
 
+And
+
+![InstructionsForExport](./assets/Instructions-41.png)
+
+<br>*Prompt*:
+
+<br>Response:
+
+Your manual test cases are ready for download: [Download Excel file](./assets/user_authentication_test_cases.xlsx)
+
+
+
+
 
