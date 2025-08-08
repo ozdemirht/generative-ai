@@ -299,13 +299,12 @@ And, suggested some file formats that it can generate these test cases.
 <details>
 <summary>
 Can we generate test automation code?
------
 </summary>
 
 <br>**Prompt**: could you please generate automated test skeletons in robot framework
-
 <br>**GPT’s Output**:
 Before generating any code, GPT answers that the RESTful API will have the following endpoints. This will be API-Under-Test.
+
 </details>
 
 
