@@ -406,7 +406,7 @@ Before generating any code, GPT answers that the RESTful API will have the follo
 ![AssumptionForTest](./assets/CGPT-Test-1.png)
 
 Folder structure
-![AssumptionForTest](./assets/CGPT-Test-2.png)
+![Folders](./assets/CGPT-Test-2.png)
 
 
 </details>
