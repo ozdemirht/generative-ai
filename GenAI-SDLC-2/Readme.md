@@ -61,7 +61,9 @@ Provided 4 ways to consumethis data product; REST API, SQL Query, Kafka Stream, 
 Panels for SQL Query, Kafka stream, and Batch contains the same level of detail and ready to use code. 
 For a data product product consumer, these panels contain decent amount of information to start using. These will help reduce Time to Value (TTV) of a data product. 
 
-
+<details>
+<summary> Provenance and Lineage </summary>
+<br>**Prompt**: add provenance and lineage of data
 
 <br>**GPT’s Output**:
 
@@ -70,6 +72,7 @@ For a data product product consumer, these panels contain decent amount of infor
 ![p5c](./assets/Picture-5c.png)
 
 
+</details>
 
 <br>**GPT’s Output**:11
 
