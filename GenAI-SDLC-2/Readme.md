@@ -14,11 +14,25 @@ Introduction
 <br>**Analysis**:
 
 
-<br>**Prompt**: generate a card for data product catalog
-
-<br>**GPT’s Output**:
+<br>Quality
 
 ![p2](./assets/Picture-2.png)
+
+
+<br>Alerts
+
+![p10](./assets/Picture-10.png)
+
+<br>History
+
+![p7](./assets/Picture-7.png)
+
+
+![p8](./assets/Picture-8.png)
+
+
+![p9](./assets/Picture-9.png)
+
 
 
 <br>**Analysis**:
@@ -56,17 +70,6 @@ For a data product product consumer, these panels contain decent amount of infor
 
 ![p6](./assets/Picture-6.png)
 
-<br>**GPT’s Output**: 7
-
-![p7](./assets/Picture-7.png)
-
-<br>**GPT’s Output**: 8
-
-![p8](./assets/Picture-8.png)
-
-<br>**GPT’s Output**: 9
-
-![p9](./assets/Picture-9.png)
 
 <br>**GPT’s Output**: 10
 
