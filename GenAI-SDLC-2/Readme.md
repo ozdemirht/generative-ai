@@ -68,7 +68,9 @@ For a data product product consumer, these panels contain decent amount of infor
 <br>**GPT’s Output**:
 
 ![p5a](./assets/Picture-5a.png)
+
 ![p5b](./assets/Picture-5b.png)
+
 ![p5c](./assets/Picture-5c.png)
 
 
