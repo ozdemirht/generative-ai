@@ -3,6 +3,8 @@ Introduction
 =======
 
 
+<details>
+<summary>Let's generate one data product card for a data catalog</summary>
 
 <br>**Prompt**: generate a card for data product catalog
 
@@ -40,6 +42,11 @@ Introduction
 
 <br>**Analysis**:
 
+</details>
+
+<details>
+<summary>Let's add a second data product card</summary>
+
 <br>**Prompt**: add another data product for product feature metrics
 
 <br>**GPT’s Output**:
@@ -47,7 +54,10 @@ Introduction
 ![p3](./assets/Picture-3.png)
 
 <br>**Analysis**:
+</details>
 
+<details>
+<summary>How does it help to consumers?</summary>
 
 <br>**Prompt**: add guide for how to consume
 
@@ -60,6 +70,7 @@ Introduction
 Provided 4 ways to consumethis data product; REST API, SQL Query, Kafka Stream, and Batch. Explains the REST API with an example, and its rate limits. Furthermore gives users information on which team to reach out to, where the further documentation is, and (if needed) raise a JIRA ticket.
 Panels for SQL Query, Kafka stream, and Batch contains the same level of detail and ready to use code. 
 For a data product product consumer, these panels contain decent amount of information to start using. These will help reduce Time to Value (TTV) of a data product. 
+</details>
 
 <details>
 <summary> Provenance and Lineage </summary>
@@ -74,6 +85,7 @@ For a data product product consumer, these panels contain decent amount of infor
 
 ![p5c](./assets/Picture-5c.png)
 
+<br>**Analysis**:
 
 </details>
 
@@ -86,19 +98,23 @@ For a data product product consumer, these panels contain decent amount of infor
 
 ![p11](./assets/Picture-11.png)
 
-</details>
-
-<br>**GPT’s Output**:12
 
 ![p12](./assets/Picture-12.png)
 
-<br>**GPT’s Output**:13
 
 ![p13](./assets/Picture-13.png)
 
+<br>**Analysis**:
 
+</details>
 
+<details>
+<summary> How does the React code look like?</summary>
 
-<br>**GPT’s Output**:Code
+<br>Code
 
 ![pCode](./assets/Picture-Code.png)
+
+<br>**Analysis**:
+
+</details>
