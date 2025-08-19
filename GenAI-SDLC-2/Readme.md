@@ -34,3 +34,10 @@ Introduction
 
 ![p4a](./assets/Picture-4a.png)
 ![p4b](./assets/Picture-4b.png)
+
+
+<br>**GPT’s Output**:
+
+![p5a](./assets/Picture-5a.png)
+![p5b](./assets/Picture-5b.png)
+![p5c](./assets/Picture-5c.png)
