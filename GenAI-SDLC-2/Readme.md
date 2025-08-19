@@ -51,29 +51,32 @@ Introduction
 ![p7](./assets/Picture-7.png)
 
 <br>**GPT’s Output**: 8
+
 ![p8](./assets/Picture-8.png)
 
 <br>**GPT’s Output**: 9
+
 ![p9](./assets/Picture-9.png)
 
 <br>**GPT’s Output**: 10
+
 ![p10](./assets/Picture-10.png)
 
 <br>**GPT’s Output**:11
+
 ![p11](./assets/Picture-11.png)
 
 <br>**GPT’s Output**:12
+
 ![p12](./assets/Picture-12.png)
 
 <br>**GPT’s Output**:13
+
 ![p13](./assets/Picture-13.png)
 
-<br>**GPT’s Output**:14
-![p14](./assets/Picture-14.png)
 
-<br>**GPT’s Output**:15
-![p15](./assets/Picture-15.png)
 
 
 <br>**GPT’s Output**:Code
+
 ![pCode](./assets/Picture-Code.png)
