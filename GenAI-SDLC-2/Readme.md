@@ -63,6 +63,7 @@ For a data product product consumer, these panels contain decent amount of infor
 
 <details>
 <summary> Provenance and Lineage </summary>
+
 <br>**Prompt**: add provenance and lineage of data
 
 <br>**GPT’s Output**:
@@ -76,9 +77,16 @@ For a data product product consumer, these panels contain decent amount of infor
 
 </details>
 
-<br>**GPT’s Output**:11
+<details>
+<summary> Add a data product depends on the prior data product </summary>
+
+<br>**Prompt**: add another data product that depends on at least one of the existing data product
+
+<br>**GPT’s Output**:
 
 ![p11](./assets/Picture-11.png)
+
+</details>
 
 <br>**GPT’s Output**:12
 
