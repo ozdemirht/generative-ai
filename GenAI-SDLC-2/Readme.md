@@ -29,11 +29,15 @@ Introduction
 
 ![p3](./assets/Picture-3.png)
 
+<br>**Prompt**: add guide for how to consume
 
-<br>**Analysis**:
+<br>**GPT’s Output**:
 
 ![p4a](./assets/Picture-4a.png)
 ![p4b](./assets/Picture-4b.png)
+
+<br>**Analysis**:
+
 
 
 <br>**GPT’s Output**:
