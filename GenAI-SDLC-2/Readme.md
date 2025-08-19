@@ -23,7 +23,7 @@ Introduction
 
 <br>**Analysis**:
 
-<br>**Prompt**: generate a card for data product catalog
+<br>**Prompt**: add another data product for product feature metrics
 
 <br>**GPT’s Output**:
 
