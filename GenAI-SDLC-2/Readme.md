@@ -90,7 +90,7 @@ For a data product product consumer, these panels contain decent amount of infor
 </details>
 
 <details>
-<summary>Let's add a data product depends on the existing data products </summary>
+<summary>Let's add a data product depending on the existing data products </summary>
 
 <br>**Prompt**: add another data product that depends on at least one of the existing data product
 
