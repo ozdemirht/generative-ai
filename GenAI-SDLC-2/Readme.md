@@ -57,7 +57,7 @@ Introduction
 </details>
 
 <details>
-<summary>How does it help to consumers?</summary>
+<summary>Let's help consumers with onboarding</summary>
 
 <br>**Prompt**: add guide for how to consume
 
@@ -73,7 +73,7 @@ For a data product product consumer, these panels contain decent amount of infor
 </details>
 
 <details>
-<summary> Provenance and Lineage </summary>
+<summary>Let's add provenance and lineage</summary>
 
 <br>**Prompt**: add provenance and lineage of data
 
@@ -90,7 +90,7 @@ For a data product product consumer, these panels contain decent amount of infor
 </details>
 
 <details>
-<summary> Add a data product depends on the prior data product </summary>
+<summary>Let's add a data product depends on the existing data products </summary>
 
 <br>**Prompt**: add another data product that depends on at least one of the existing data product
 
@@ -109,7 +109,7 @@ For a data product product consumer, these panels contain decent amount of infor
 </details>
 
 <details>
-<summary> How does the React code look like?</summary>
+<summary>Let's check React UI code</summary>
 
 <br>Code
 
