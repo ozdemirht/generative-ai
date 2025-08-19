@@ -29,6 +29,9 @@ Introduction
 
 ![p3](./assets/Picture-3.png)
 
+<br>**Analysis**:
+
+
 <br>**Prompt**: add guide for how to consume
 
 <br>**GPT’s Output**:
@@ -37,6 +40,9 @@ Introduction
 ![p4b](./assets/Picture-4b.png)
 
 <br>**Analysis**:
+Provided 4 ways to consumethis data product; REST API, SQL Query, Kafka Stream, and Batch. Explains the REST API with an example, and its rate limits. Furthermore gives users information on which team to reach out to, where the further documentation is, and (if needed) raise a JIRA ticket.
+Panels for SQL Query, Kafka stream, and Batch contains the same level of detail and ready to use code. 
+For a data product product consumer, these panels contain decent amount of information to start using. These will help reduce Time to Value (TTV) of a data product. 
 
 
 
