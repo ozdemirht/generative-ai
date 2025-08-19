@@ -23,4 +23,14 @@ Introduction
 
 <br>**Analysis**:
 
+<br>**Prompt**: generate a card for data product catalog
 
+<br>**GPT’s Output**:
+
+![p3](./assets/Picture-3.png)
+
+
+<br>**Analysis**:
+
+![p4a](./assets/Picture-4a.png)
+![p4b](./assets/Picture-4b.png)
