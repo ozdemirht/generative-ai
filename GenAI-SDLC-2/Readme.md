@@ -18,6 +18,9 @@ Introduction
 
 ![p2](./assets/Picture-2.png)
 
+<br>Monitoring
+
+![p6](./assets/Picture-6.png)
 
 <br>Alerts
 
