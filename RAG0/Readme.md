@@ -39,6 +39,13 @@ Very large documents ingestion via streaming
 
 ### Submitting a user query
 
+When the system is building a context, 
+a) it should be relevant to the given query, and 
+b) it should not waste token budget and be aware of context_window size. 
+
+The bigger context increases tokens/query and latency because LLM needs to process more 
+(because time complexity is not linear with respect to the number of tokens). 
+
 #### Select relevant data from Vector Database by using a user query
 - **Maximum Marginal Reference** (retrieve diverse context document chunks)
 - Compression (ContextualCompressionRetriever)
