@@ -3,10 +3,13 @@
 ## Introduction
 
 Documents are downloaded from https://www.gutenberg.org/, Project Gutenberg is an online library of more than 75,000 free eBooks. 
-Objective is build a Q&A chatbot that allows user to load a book then talk about a book with LLM. 
+Objective is to build a Q&A chatbot that allows user to load a book then talk about a book with LLM. 
 
 It is based on Retrieval Augmented Generation (RAG). UI is based on streamlit, 
 LangChain is leveraged to define processing pipelines. 
+
+It will look also look at from operational perspective (especially cost and token usage).
+Where we decide to place a function will have a long term impact. 
 
 ## Pipeline
  1. Ingestion
