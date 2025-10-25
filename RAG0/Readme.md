@@ -1,4 +1,4 @@
-# RAG with Books
+# Chat with your book (LLM with RAG)
 
 ## Introduction
 
