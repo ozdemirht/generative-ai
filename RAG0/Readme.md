@@ -26,16 +26,34 @@ Where we decide to place a function will have a long term impact.
     1. Present response to user
     1. Update memory and wait for the next question (goto 2.i)
 
+### Data Cleaning
+
+
+### Chunking
+This process splits the document into chunks that will be embedded (transformed to vector representation).
+There needs to be some linkage between chunks.
+The **content characteristics** (e.g., unstructured vs structured) is an important consideration when deciding chunking strategy. 
+
+A good splitter for the content at hand will highly likely to produce better relevant data. That will directly impact the quality of completion. 
+
+Conclusion: There are many options. 
 
 ### Embedding
 - OpenAI - model selection trade-off cost - accuracy
 - Local - model selection trade-off latency - accuracy
 
-Very large documents ingestion via streaming 
+Note: Very large documents ingestion via streaming 
+
+Conclusion: There are many options & architectural compositions.
 
 ### Memory/Context Maintenance
 - Local 
 - Claude   
+
+### Prompt
+Prompt quality is very important for quality completion. 
+LangChain hub has some tested prompts. 
+
 
 ### Submitting a user query
 
@@ -56,5 +74,13 @@ The bigger context increases tokens/query and latency because LLM needs to proce
 - Summarize memory to stay within context_window constraint.
 
 #### Invoke with context and user query
+Here, the system finally calls LLM to obtain a response. 
+
+## Summary
+The number of configurations when building ingestion and Q&A steps are considerable.  
 
 ## References
+
+## Q&A
+
+### Is there a difference between predict, generate, completion in LLM?
