@@ -79,6 +79,13 @@ Here, the system finally calls LLM to obtain a response.
 ## Summary
 The number of configurations when building ingestion and Q&A steps are considerable.  
 
+## Details
+
+### Setup
+
+### UI
+
+
 ## References
 
 ## Q&A
