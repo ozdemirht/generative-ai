@@ -1,28 +1,26 @@
 import streamlit as st
-import random
 import time
 from dotenv import load_dotenv
 import os
 
-from io import StringIO
-from langchain_text_splitters import RecursiveCharacterTextSplitter
-from langchain_openai import OpenAIEmbeddings
-from langchain_community.vectorstores import FAISS
-from langchain_openai import ChatOpenAI
-from langchain_core.prompts import PromptTemplate
-
 ## Core Interface to LLM
 from core_llm import MyLLMSession
+
 ###
 # ui_constants.py
 CHAT_MESSAGE = "How can I help?"
 
-###
-#QA_CHAIN_PROMPT = PromptTemplate.from_template(template=prompt)
-#vector_store = None
-#llm = None
+### Logging
+import logging
+logger = logging.getLogger(os.path.splitext(os.path.basename(__file__))[0])
+logging.basicConfig(filename=f"./logs/{os.path.splitext(os.path.basename(__file__))[0]}.log", filemode='w',encoding='utf-8', level=logging.DEBUG)
+
 
 def get_completion(st, prompt):
+    """
+    Utilizes st.session_state to invokes LLM completion,
+    then updates token consumption st.session_state
+    """
     full_response = "Not ready!"
     if st and st.session_state.llm:
         st.session_state.llm.set_temperature(st.session_state.temperature)
@@ -40,22 +38,22 @@ def get_completion(st, prompt):
 prompt = """
 You are an assistant for question-answering tasks. 
 Use the following pieces of retrieved context to answer the question. 
-If you don't know the answer, just say that 'you do not know'. 
-If the retrieved context is not sufficient, just say that 'there is not enough context'. 
+If you don't know the answer, just say that 'I do not know.'. 
 Use three sentences maximum and keep the answer concise.
 Context: {context} 
 Question: {question}
 Answer:
 """
+#If the retrieved context is not sufficient, just say that 'there is not enough context'.
 
 # Load environment variables from the .env file
 load_dotenv()
-# Access the variables
-# API_KEY
+# Set API_KEY in .env file, OPENAI_API_KEY=ABCD.......
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 ## $0.05/1M tokens gpt-5-mini $0.25/1M tokens
 model_name = os.getenv("OPENAI_MODEL_NAME","gpt-5-nano")
 
+### UI starts
 st.title("Chat with your book - www.gutenberg.org")
 
 with st.sidebar:
@@ -65,7 +63,7 @@ with st.sidebar:
     msg_length = 0
     if "messages" in st.session_state and st.session_state.messages:
         msg_length = len(st.session_state.messages)
-    st.markdown(f"Messages: {msg_length}")
+    st.markdown(f"Chat count: {msg_length}")
     # Temperature Configuration
     st.session_state.temperature = st.slider(
         "Temperature controls creativity",
@@ -83,18 +81,19 @@ with st.sidebar:
     )
     if "token_monitor" in st.session_state and st.session_state.token_monitor:
         msg_length = len(st.session_state.messages)
-        st.markdown(f"Completion Tokens: {st.session_state.token_counter_completions}")
-        st.markdown(f"Prompt Tokens....: {st.session_state.token_counter_prompt}")
-        st.markdown(f"Total Tokens.....: {st.session_state.token_counter_total}")
+        st.markdown(f"= Token Counts =")
+        st.markdown(f"Completion: {st.session_state.token_counter_completions}")
+        st.markdown(f"Prompt....: {st.session_state.token_counter_prompt}")
+        st.markdown(f"Total.....: {st.session_state.token_counter_total}")
         st.markdown(f"Estimated Cost...: {st.session_state.token_counter_total*(0.05/1000000)}\u00A2")
 
 
 # use st.session_state
 if "llm" not in st.session_state:
-    llm = MyLLMSession("OpenAI", 22, OPENAI_API_KEY, model_name=model_name, prompt=prompt)
+    llm = MyLLMSession("OpenAI", api_key=OPENAI_API_KEY, model_name=model_name, prompt=prompt)
     st.session_state.llm = llm
 
-# monitor token usage
+# monitor token consumption
 if "token_monitor" not in st.session_state:
     st.session_state.token_monitor = True
     st.session_state.token_monitor_start = time.time()
@@ -121,7 +120,7 @@ for message in st.session_state.messages:
 # Accept user input
 if prompt := st.chat_input(CHAT_MESSAGE):
     if "llm" not in st.session_state:
-        llm = MyLLMSession("OpenAI", 22, OPENAI_API_KEY, "gpt-5-nano", prompt=prompt)
+        llm = MyLLMSession("OpenAI", OPENAI_API_KEY, "gpt-5-nano", prompt=prompt)
         st.session_state.llm = llm
 
     if "uploaded_file" in st.session_state:
@@ -136,17 +135,20 @@ if prompt := st.chat_input(CHAT_MESSAGE):
             # Display assistant response in chat message container
             with st.chat_message("assistant"):
                 message_placeholder = st.empty()
-                full_response = get_completion(st, prompt)
-                print(f"\nFull response => {full_response}")
-                print(f"\nFull response => {full_response.content}")
+                with st.spinner(show_time=True):
+                    full_response = get_completion(st, prompt)
+                logger.debug(f"\nFull response => {full_response}")
+                logger.debug(f"\nFull response.content => [{full_response.content}]")
                 # what needs to be added to chat
                 message_placeholder.markdown(full_response.content)
             # Add assistant response to chat history
-            if st.session_state.messages:
+            if st.session_state.messages and full_response.content and len(full_response.content)>0:
                 st.session_state.messages.append({"role": "assistant", "content": full_response.content})
         else:
             with st.chat_message("assistant"):
                 st.markdown("Load a file to Vector store!")
+                logger.error("Load a file to Vector store!")
     else:
         with st.chat_message("assistant"):
             st.markdown("Load a file first!")
+            logger.error("Load a file first!")
