@@ -112,14 +112,33 @@ The cost running some steps in owned infrastructure vs hiring LLM providers for 
 
 ### Setup
 
-'''
+```
 pip install langchain
 pip install langchain-openai
 pip install faiss-cpu
-'''
+```
 
 ### UI
 
+[ui_main.py](./src/ui_main.py) implements UI by using streamlit.
+
+[core_llm.py](./src/core_llm.py) implements interfacing to LLM provider, langchain and OpenAI API.
+
+### Directory Structure
+```
+RAG0
+│   requirements.txt
+│   Readme.md
+│   .gitignore
+│
+├───src
+│       core_llm.py
+│       ui_main.py
+│       Calculate-Number-of-Tokens.ipynb
+│
+├───data
+│       
+```
 
 ## References
  1. [OPENAI Pricing](https://platform.openai.com/docs/pricing)
