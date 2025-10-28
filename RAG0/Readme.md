@@ -98,6 +98,8 @@ The cost of operation has several components
     2. Input tokens is determined by the tokenized form of prompt that system submits to LLM provider. For instance, RAG prompt has 3 parts; instructions, context, and user's prompt/question. 
     3. Output tokens is determined by the system when calling to LLM provider. Application can limit the number of tokens to be generated. This is a parameter in API call. 
 
+![Shows Token Consumption](./img/UI-main_screen_v2.png)
+
 ## Summary
 The number of configurations when building ingestion and Q&A steps are considerable.  
 
