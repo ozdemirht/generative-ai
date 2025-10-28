@@ -20,13 +20,17 @@ Where we decide to place a function will have a long term impact.
      1. Chunking
      1. Embedding
      1. Store chunks to vector database 
-1. Q&A Session
+1. Q&A Session (Inferencing)
     1. Accept user query
     1. Select relevant context from vector database
     1. Generate a prompt, containing instructions, context, and user's question
     1. Invoke LLM to generate a response
     1. Present response to user
     1. Update memory and wait for the next question (goto 2.i)
+
+## Ingestion
+
+![RAG Ingestion Flow](./img/RAG-ingestion-flow.png)
 
 ### Data Cleaning
 
@@ -57,7 +61,7 @@ Prompt quality is very important for quality completion.
 LangChain hub has some tested prompts. 
 
 
-### Submitting a user query
+### Submitting a user query (Inferencing)
 
 When the system is building a context, 
 a) it should be relevant to the given query, and 
@@ -65,6 +69,8 @@ b) it should not waste token budget and be aware of context_window size.
 
 The bigger context increases tokens/query and latency because LLM needs to process more 
 (because time complexity is not linear with respect to the number of tokens). 
+
+![RAG Inferencing Flow](./img/RAG-inferencing.png)
 
 #### Select relevant data from Vector Database by using a user query
 - **Maximum Marginal Reference** (retrieve diverse context document chunks)
