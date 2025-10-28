@@ -11,6 +11,8 @@ LangChain is leveraged to define processing pipelines.
 It will look also look at from operational perspective (especially cost and token usage).
 Where we decide to place a function will have a long term impact. 
 
+![Streamlit UI](./img/UI_main_screen_v1.png)
+
 ## Pipeline
  1. Ingestion
      1. Document Loading 
@@ -82,6 +84,12 @@ The number of configurations when building ingestion and Q&A steps are considera
 ## Details
 
 ### Setup
+
+'''
+pip install langchain
+pip install langchain-openai
+pip install faiss-cpu
+'''
 
 ### UI
 
