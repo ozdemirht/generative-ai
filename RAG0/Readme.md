@@ -84,8 +84,25 @@ The bigger context increases tokens/query and latency because LLM needs to proce
 #### Invoke with context and user query
 Here, the system finally calls LLM to obtain a response. 
 
+## Cost 
+The cost of operation has several components
+ 1. Ingestion
+    1. If the application is using LLM Provider for embedding, then there will be a cost for these tokens. 
+    2. For instance, assuming 1k tokens = 750 words, then for each chunk, it is possible to calculate the number of tokens needed.
+    3. Then, the aggregation of tokens of each chunk gives the total tokens for the ingested document. 
+    4. Then, based on the text embedding model used, it can be calculated.
+    5. For instance, text-embedding-3-small costs 0.03/1M and text-embedding-3-large costs 0.13/1M tokens.
+ 1. Inferencing 
+    1. Embedding of user's prompt. If the service is using LLM provider, then there will. 
+    2. Number of input and output tokens in each call
+    2. Input tokens is determined by the tokenized form of prompt that system submits to LLM provider. For instance, RAG prompt has 3 parts; instructions, context, and user's prompt/question. 
+    3. Output tokens is determined by the system when calling to LLM provider. Application can limit the number of tokens to be generated. This is a parameter in API call. 
+
 ## Summary
 The number of configurations when building ingestion and Q&A steps are considerable.  
+
+Architecture choices will depend on the application. 
+The cost running some steps in owned infrastructure vs hiring LLM providers for jobs to be done. 
 
 ## Details
 
@@ -101,7 +118,9 @@ pip install faiss-cpu
 
 
 ## References
-
+ 1. [OPENAI Pricing](https://platform.openai.com/docs/pricing)
+ 1. [Navigating OpenAI Embeddings API Pricing: Token Count vs. API Calls](https://community.openai.com/t/navigating-openai-embeddings-api-pricing-token-count-vs-api-calls/289081)
+ 1. [From Tokens to Costs: Embedding Estimation with OpenAI API](https://mindfulcto.com/from-tokens-to-costs-embedding-estimation-with-openai-api-8c535753a479)
 ## Q&A
 
 ### Is there a difference between predict, generate, completion in LLM?
