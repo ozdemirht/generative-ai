@@ -15,24 +15,31 @@
 # Import
 import streamlit as st
 from io import StringIO
+import os
+from dotenv import load_dotenv
 
-from PyPDF2 import PdfReader
-#from langchain import hub
+# from PyPDF2 import PdfReader
+# from langchain import hub
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 
 from langchain_community.vectorstores import FAISS
+# from langchain.chains import RetrievalQA
+
+from langchain_core.prompts import ChatPromptTemplate
+from langchain_core.prompts import PromptTemplate
+from langchain_core.documents import Document
 
 from langchain_classic.chains.question_answering import load_qa_chain
-from langchain_core.prompts import ChatPromptTemplate
-from langchain.chains.combine_documents import create_stuff_documents_chain
+from langchain_classic.chains import create_retrieval_chain
+from langchain_classic.chains.combine_documents import create_stuff_documents_chain
 
 from langchain_openai import OpenAI
 from langchain_openai import OpenAIEmbeddings
 from langchain_openai import ChatOpenAI
 
-from langchain_core.documents import Document
 from langgraph.graph import START, StateGraph
 from typing_extensions import List, TypedDict
+
 
 def test():
     st.title("Hello Streamlit-er 👋")
@@ -62,9 +69,11 @@ def read_file_txt(file_path):
     except Exception as e:
         print(f"An error occurred: {e}")
 
+
 def convert_to_lowercase(text):
     lowercased_text = text.lower()
     return lowercased_text
+
 
 # Define state for application
 class State(TypedDict):
@@ -72,10 +81,12 @@ class State(TypedDict):
     context: List[Document]
     answer: str
 
+
 # Define application steps
 def retrieve(state: State):
     retrieved_docs = vector_store.similarity_search(state["question"])
     return {"context": retrieved_docs}
+
 
 def generate(state: State):
     docs_content = "\n\n".join(doc.page_content for doc in state["context"])
@@ -83,36 +94,57 @@ def generate(state: State):
     response = llm.invoke(messages)
     return {"answer": response.content}
 
-##=========================================
-OPENAI_API_KEY="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"
-model_name ="gpt-5-nano" ## $0.05/1M tokens gpt-5-mini $0.25/1M tokens
 
-#Upload PDF files
+##=========================================
+load_dotenv()
+OPENAI_API_KEY = os.getenv(OPENAI_API_KEY,"NO API KEY FOUND")
+model_name = "gpt-5-nano"  ## $0.05/1M tokens gpt-5-mini $0.25/1M tokens
+
+# Upload PDF files
 st.header("My first Chatbot")
-#prompt = hub.pull("rlm/rag-prompt")
-prompt="""
-You are an assistant for question-answering tasks. Use the following pieces of retrieved context to answer the question. If you don't know the answer, just say that you don't know. Use three sentences maximum and keep the answer concise.
-Question: {question} 
+# prompt = hub.pull("rlm/rag-prompt")
+prompt = """
+You are an assistant for question-answering tasks. 
+Use the following pieces of retrieved context to answer the question. 
+If you don't know the answer, just say that you don't know. 
+Use three sentences maximum and keep the answer concise.
 Context: {context} 
+Question: {question}
 Answer:
 """
 print(f"Prompt: {prompt}")
+
+# Build prompt
+template1 = """Use the following pieces of context to answer the question at the end. If you don't know the answer, just say that you don't know, don't try to make up an answer. Use three sentences maximum. Keep the answer as concise as possible. Always say "thanks for asking!" at the end of the answer. 
+Context: {context}
+Question: {question}
+Helpful Answer:"""
+
+QA_CHAIN_PROMPT = PromptTemplate.from_template(template=prompt)
+"""
+QA_CHAIN_PROMPT = ChatPromptTemplate.from_messages(
+    [
+        ("system", "You are an assistant for question-answering tasks. Use the following pieces of retrieved context to answer the question. If you don't know the answer, just say that you don't know. Use three sentences maximum and keep the answer concise."),
+        ("user", "Context: {context}\nQuestion: {question}\n Answer: "),         # <--- "question" and "context" will be filled in here
+    ]
+)
+"""
 
 with st.sidebar:
     st.title("Your Documents")
     uploaded_file = st.file_uploader(" Upload a PDf file and start asking questions", type="txt")
 
-#text = file ##read_file_txt(file)
+# text = file ##read_file_txt(file)
 st.write(" ")
 
 if uploaded_file is not None:
     stringio = StringIO(uploaded_file.getvalue().decode("utf-8"))
-    #st.write(stringio)
+    # st.write(stringio)
 
     # data cleaning
     text = convert_to_lowercase(stringio.read()).replace("\r\n", "\n").replace("\n\n", "\n")
-    text = text.replace("_", "") #.replace("\n", " ")
-    #st.write(text)
+    text = text.replace("_", "")  # .replace("\n", " ")
+    # st.write(text)
 
     # Break it into chunks
     text_splitter = RecursiveCharacterTextSplitter(
@@ -127,6 +159,7 @@ if uploaded_file is not None:
 
     print("\nChunks\n")
     print(chunks[:10])
+    chunks = chunks[:5]
     # generate embedding
     embeddings = OpenAIEmbeddings(openai_api_key=OPENAI_API_KEY)
 
@@ -146,29 +179,59 @@ if uploaded_file is not None:
     )
 
     # Compile application and test
-    #graph_builder = StateGraph(State).add_sequence([retrieve, generate])
-    #graph_builder.add_edge(START, "retrieve")
-    #graph = graph_builder.compile()
+    # graph_builder = StateGraph(State).add_sequence([retrieve, generate])
+    # graph_builder.add_edge(START, "retrieve")
+    # graph = graph_builder.compile()
 
-
+    i = 1
     while True:
         # get user question - UI UI
-        user_question = st.text_input("Type Your question here")
+        print("\nUser question - ready!\n")
+        try:
 
-        if user_question in ["exit","by","quit"]:
-            break
+            user_question = "What is the name of this book?"
+            user_question = st.text_input("Type Your question here", placeholder="What is the name of this book?",
+                                      key=f"user_question")
+            i += 1
+            print(f"\nquestion => {user_question}")
 
-        # Semantic Search
-        match = vector_store.similarity_search(user_question)
-        # st.write(match)
+            if user_question in ["exit", "by", "quit"]:
+                break
 
-        # output completion
-        # chain -> take the question, get relevant document, pass it to the LLM, generate the output
-        #chain = load_qa_chain(llm, chain_type="stuff")
-        chain = create_stuff_documents_chain(llm, prompt)
-        response = chain.invoke({"context":match, "question":user_question})
+            # Semantic Search
+            match = vector_store.similarity_search(user_question)
+            # st.write(match)
 
-        st.write(response)
-        print(f"\n{user_question} => {response}")
+            # output completion
+            # chain -> take the question, get relevant document, pass it to the LLM, generate the output
+            # chain = load_qa_chain(llm, chain_type="stuff")
+            # chain = create_stuff_documents_chain(llm, QA_CHAIN_PROMPT)
+            """
+            document_chain = create_stuff_documents_chain(llm, QA_CHAIN_PROMPT)
+            retriever = vector_store.as_retriever()  # Your existing retriever
+            chain = create_retrieval_chain(retriever, document_chain)
+            chain = RetrievalQA.from_chain_type(
+                llm,
+                retriever=vector_store.as_retriever(),
+                return_source_documents=True,
+                chain_type_kwargs={"prompt": QA_CHAIN_PROMPT}
+            )
+            response = chain.invoke({"input":user_question})
+            """
+            docs_content = docs_content = "\n\n".join(doc.page_content for doc in match)
 
-    print("\nThank you for using Streamlit.")
+            print(f"\nquestion => {user_question}")
+            print(f"\ncontext => {docs_content}")
+
+            messages = QA_CHAIN_PROMPT.invoke({"question": user_question, "context": docs_content})
+            print(f"\n Message2LLM => {messages}")
+
+            response = llm.invoke(messages)
+
+            st.write(response)
+            print(f"\n{user_question} => {response}")
+
+        except st.errors.StreamlitDuplicateElementKey as e:
+            print(e)
+
+print("\nThank you for using Streamlit.")
