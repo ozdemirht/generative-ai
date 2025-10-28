@@ -100,6 +100,8 @@ The cost of operation has several components
 
 ![Shows Token Consumption](./img/UI-main_screen_v2.png)
 
+[Calculate-Number-of-Tokens.ipynb](./src/Calculate-Number-of-Tokens.ipynb) shows how to calculate token cost. 
+
 ## Summary
 The number of configurations when building ingestion and Q&A steps are considerable.  
 
