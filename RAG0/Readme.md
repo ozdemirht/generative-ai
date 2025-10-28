@@ -34,38 +34,58 @@ Where we decide to place a function will have a long term impact.
 
 ### Data Cleaning
 
+- remove extra white space
+- replace '\r\n' by '\n'
+- stopwords (?)
 
 ### Chunking
+
 This process splits the document into chunks that will be embedded (transformed to vector representation).
 There needs to be some linkage between chunks.
 The **content characteristics** (e.g., unstructured vs structured) is an important consideration when deciding chunking strategy. 
 
 A good splitter for the content at hand will highly likely to produce better relevant data. That will directly impact the quality of completion. 
+These content splitters will require chunk length and chunk overlap (to link consecutive chunks).
 
-Conclusion: There are many options. 
+**Conclusion**: There are many splitters with configuration options. 
 
 ### Embedding
 In this step, each chunk is embedded to a vector space, that representation will be used for retrieval 
 by using cosine similarity metric (similarity search). 
-
+Retrieved chunks via similarity search are "A" in RAG, query is the user's prompt.
+These chunks are send to LLM Provider as a **context** in the **prompt**. 
 
 - OpenAI - model selection trade-off cost - accuracy
 - Local - model selection trade-off latency - accuracy
 
 ![Embedding Flow](./img/embedding-flow.png)
 
-Note: Very large documents ingestion via streaming 
+**Note**: Very large documents ingestion via streaming 
 
-Conclusion: There are many options & architectural compositions.
+**Conclusion**: There are many options & architectural compositions.
 
 ### Memory/Context Maintenance
+- 
 - Local 
 - Claude   
 
 ### Prompt
 Prompt quality is very important for quality completion. 
 LangChain hub has some tested prompts. 
+But, the optimization will require testing to figure out the acceptable cost/performance. 
+The search space could get very large. The following table tried to enumerate all these dimension. 
+This table do not contain neither all LLM Providers nor models or prompt variations.
 
+| LLM Provider | Mode       | Prompt   | Response Quality | Cost |
+|--------------|------------|----------|------------------|------|
+| OpenAI       | gpt-5-mini | prompt_1 | y%               |      |
+| OpenAI       | gpt-5-nano | prompt_1 | x%               |      |
+| Claude       | haiku-4.5  | prompt_1 | ?%               |      |
+| Claude       | sonnet-4.5 | prompt_1 | ?%               |      |
+
+An evaluation set will be needed to determine which combination should be shipped.
+
+**Conclusion**: Need to experiment with content of "rag prompt".
 
 ### Submitting a user query (Inferencing)
 
