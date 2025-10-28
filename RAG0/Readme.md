@@ -45,9 +45,14 @@ A good splitter for the content at hand will highly likely to produce better rel
 Conclusion: There are many options. 
 
 ### Embedding
+In this step, each chunk is embedded to a vector space, that representation will be used for retrieval 
+by using cosine similarity metric (similarity search). 
+
+
 - OpenAI - model selection trade-off cost - accuracy
 - Local - model selection trade-off latency - accuracy
 
+![Embedding Flow](./img/embedding-flow.png)
 Note: Very large documents ingestion via streaming 
 
 Conclusion: There are many options & architectural compositions.

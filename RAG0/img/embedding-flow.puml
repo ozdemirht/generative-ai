@@ -1,0 +1,27 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+== load_file() ==
+
+MyLLMSession -> MyLLMSession: clean_text()
+MyLLMSession -> MyLLMSession: chunk_text()
+
+loop chunk in chunks
+MyLLMSession -> OpenAIEmbeddings: chunk_encoded=encode(chunk)
+note right
+Generate tokens
+for a given chunk of content
+end note
+
+MyLLMSession -> FAISS : add(chunk_encoded, chunk)
+note right
+Store
+-embedding vector
+-chunk
+end note
+
+end
+
+@enduml
