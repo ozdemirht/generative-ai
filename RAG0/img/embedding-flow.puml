@@ -3,12 +3,14 @@
 
 autonumber
 
-== load_file() ==
+== load_file(file_name) ==
 
-MyLLMSession -> MyLLMSession: clean_text()
-MyLLMSession -> MyLLMSession: chunk_text()
+MyLLMSession -> MyLLMSession: text = clean_text(text)
 
-loop chunk in chunks
+alt#Gold #LightBlue text=chunk_text(text)
+MyLLMSession -> RecursiveCharacterTextSplitter: chunks = split_text(text,chunk_size=1000,chunk_overlap=150 )
+
+loop#LightGreen #LightYellow chunk in chunks
 MyLLMSession -> OpenAIEmbeddings: chunk_encoded=encode(chunk)
 note right
 Generate tokens
@@ -21,6 +23,7 @@ Store
 -embedding vector
 -chunk
 end note
+end
 
 end
 

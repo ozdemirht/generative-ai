@@ -53,6 +53,7 @@ by using cosine similarity metric (similarity search).
 - Local - model selection trade-off latency - accuracy
 
 ![Embedding Flow](./img/embedding-flow.png)
+
 Note: Very large documents ingestion via streaming 
 
 Conclusion: There are many options & architectural compositions.
