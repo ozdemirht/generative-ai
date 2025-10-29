@@ -81,19 +81,16 @@ it could engage in what-if scenario analysis based on available paths.
 Employees need to decide on many items with a plethora of options. 
 For instance, for health benefits, an employee needs to find out which family members are eligible (federal and state laws/regulations), 
 find out which plans are probably better based on recent health history and offered plan coverages, 
-find out FSA or HSA and contribution amount, etc.  
-For instance, for retirement investment, an employee needs to find out contribution limits, 
+find out FSA or HSA and contribution amount, etc. For instance, for retirement investment, an employee needs to find out contribution limits, 
 find out which investment vehicle is available and hopefully better suited (IRA, Roth IRA, Gold IRA, 401K, etc.), 
 tax considerations, prior tax filings, prior tax exceptions/incentives, etc. 
 There are interdependencies between these choices in addition to constraints federal and state laws and regulations define. 
 Every employee needs to solve their constrained multi-objective optimization problem every year during the registration window. 
 A Benefits-Selection-Assistant could be a powerful companion for each individual during this process. 
 Applicable federal and state laws and regulations (such as tax), available benefits and their coverage, etc. 
-go into the base corpus. 
-Benefits-Selection-Assistant can do Q&A based on base documents.  
+go into the base corpus. Benefits-Selection-Assistant can do Q&A based on base documents.  
 Benefits-Selection-Assistant will need to collect specific data from an individual or 
-systems individual granted read access to 
-so that  Benefits-Selection-Assistant could present feasible selections and 
+systems individual granted read access to so that  Benefits-Selection-Assistant could present feasible selections and 
 converse about these selections and reasoning with citations. 
 Employees will be able to make informed decisions while being aware of a large body of documents. 
 
