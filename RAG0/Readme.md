@@ -6,6 +6,10 @@ while considering the product lifecycle from inception to sunset.
 After we ship a solution to production and customers hire this solution for their jobs to be done, 
 we should be aware of TCO (Total Cost Ownership) regardless of whether it is an internal/external facing product for internal/external and paying/non-paying customers.
 
+![Generation](./img/Architecture-Generation-v1.png)
+
+![RAG](./img/Architecture-RAG-v1.png)
+
 There are many use cases for Retrieval Augmented Generation (RAG), and we could categorize these use cases as;
    - unchanging corpus, 
    - evolving corpus, 
@@ -15,8 +19,7 @@ Here are a few example use cases.
 
 **Bookworm**: A user is able to discuss the book with this application (Bookworm). 
 Ask the application to read (audio) the book or selected parts of the book. 
-Bookworm enjoys engaging with a user for a selected book, characters, events, story line.  
-Bookworm could recommend other books based on conversation with a user. 
+Bookworm enjoys engaging with a user for a selected book, characters, events, story line. Bookworm could recommend other books based on conversation with a user. 
 Of course, Bookworm can utilize audio or text to carry out these conversations. 
 Along the same trend of thought, Bookworm-like applications could be an interface to newspapers’ or magazines’ content. 
 
@@ -88,8 +91,7 @@ There are interdependencies between these choices in addition to constraints fed
 Every employee needs to solve their constrained multi-objective optimization problem every year during the registration window. 
 A Benefits-Selection-Assistant could be a powerful companion for each individual during this process. 
 Applicable federal and state laws and regulations (such as tax), available benefits and their coverage, etc. 
-go into the base corpus. Benefits-Selection-Assistant can do Q&A based on base documents.  
-Benefits-Selection-Assistant will need to collect specific data from an individual or 
+go into the base corpus. Benefits-Selection-Assistant can do Q&A based on base documents. Benefits-Selection-Assistant will need to collect specific data from an individual or 
 systems individual granted read access to so that  Benefits-Selection-Assistant could present feasible selections and 
 converse about these selections and reasoning with citations. 
 Employees will be able to make informed decisions while being aware of a large body of documents. 
