@@ -1,7 +1,7 @@
 # Chat with your book (LLM with RAG)
 
 ## Motivation
-The objective is to deep dive all steps of Retrieveal Augmented Generation (RAG) solution while considering the product lifestyle from inception to sunset. After we ship a solution to production and customers hire this solution for their jobs to be done, we should be aware of TCO (Total Cost Ownership) regardless of whether it is an internal/external facing product for internal/external and paying/non-paying customers.
+The objective is to deep dive all steps of Retrieveal Augmented Generation (RAG) solution while considering the product lifecycle from inception to sunset. After we ship a solution to production and customers hire this solution for their jobs to be done, we should be aware of TCO (Total Cost Ownership) regardless of whether it is an internal/external facing product for internal/external and paying/non-paying customers.
 
 There are many use cases for Retrieval Augmented Generation (RAG), and we could categorize these use cases as; a) unchanging corpus, b) evolving corpus, c) requiring user specific information in addition to unchanging/evolving corpus. Here are a few example use cases. 
 
