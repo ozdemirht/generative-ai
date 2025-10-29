@@ -46,6 +46,9 @@ The **content characteristics** (e.g., unstructured vs structured) is an importa
 
 A good splitter for the content at hand will highly likely to produce better relevant data. That will directly impact the quality of completion. 
 These content splitters will require chunk length and chunk overlap (to link consecutive chunks).
+[LangChain Text Splitters](https://docs.langchain.com/oss/python/integrations/splitters) lists the available splitters. 
+
+**chunk_overlap** : Is there other ways to express such linkage?
 
 **Conclusion**: There are many splitters with configuration options. 
 
@@ -53,7 +56,7 @@ These content splitters will require chunk length and chunk overlap (to link con
 In this step, each chunk is embedded to a vector space, that representation will be used for retrieval 
 by using cosine similarity metric (similarity search). 
 Retrieved chunks via similarity search are "A" in RAG, query is the user's prompt.
-These chunks are send to LLM Provider as a **context** in the **prompt**. 
+These chunks are send to LLM Provider as a **context** in the **rag prompt**. 
 
 - OpenAI - model selection trade-off cost - accuracy
 - Local - model selection trade-off latency - accuracy
@@ -63,6 +66,9 @@ These chunks are send to LLM Provider as a **context** in the **prompt**.
 **Note**: Very large documents ingestion via streaming 
 
 **Conclusion**: There are many options & architectural compositions.
+
+- [EmbeddingGemma on Hugging Face](https://huggingface.co/google/embeddinggemma-300m)
+- [SentenceTransformers Documentation](https://www.sbert.net/)
 
 ### Memory/Context Maintenance
 - 
@@ -105,7 +111,7 @@ The bigger context increases tokens/query and latency because LLM needs to proce
 
 #### Update Memory if needed
 
-- Summarize memory to stay within context_window constraint.
+- Summarize memory to stay within **context_window** constraint.
 
 #### Invoke with context and user query
 Here, the system finally calls LLM to obtain a response. 
@@ -114,15 +120,15 @@ Here, the system finally calls LLM to obtain a response.
 The cost of operation has several components
  1. Ingestion
     1. If the application is using LLM Provider for embedding, then there will be a cost for these tokens. 
-    2. For instance, assuming 1k tokens = 750 words, then for each chunk, it is possible to calculate the number of tokens needed.
-    3. Then, the aggregation of tokens of each chunk gives the total tokens for the ingested document. 
-    4. Then, based on the text embedding model used, it can be calculated.
-    5. For instance, text-embedding-3-small costs 0.03/1M and text-embedding-3-large costs 0.13/1M tokens.
+    1. For instance, assuming 1k tokens = 750 words, then for each chunk, it is possible to calculate the number of tokens needed.
+    1. Then, the aggregation of tokens of each chunk gives the total tokens for the ingested document. 
+    1. Then, based on the text embedding model used, it can be calculated.
+    1. For instance, text-embedding-3-small costs 0.03/1M and text-embedding-3-large costs 0.13/1M tokens.
  1. Inferencing 
     1. Embedding of user's prompt. If the service is using LLM provider, then there will. 
-    2. Number of input and output tokens in each call
-    2. Input tokens is determined by the tokenized form of prompt that system submits to LLM provider. For instance, RAG prompt has 3 parts; instructions, context, and user's prompt/question. 
-    3. Output tokens is determined by the system when calling to LLM provider. Application can limit the number of tokens to be generated. This is a parameter in API call. 
+    1. Number of input and output tokens in each call
+    1. Input tokens is determined by the tokenized form of prompt that system submits to LLM provider. For instance, RAG prompt has 3 parts; instructions, context, and user's prompt/question. 
+    1. Output tokens is determined by the system when calling to LLM provider. Application can limit the number of tokens to be generated. This is a parameter in API call. 
 
 ![Shows Token Consumption](./img/UI-main_screen_v2.png)
 
@@ -144,12 +150,6 @@ pip install langchain-openai
 pip install faiss-cpu
 ```
 
-### UI
-
-[ui_main.py](./src/ui_main.py) implements UI by using streamlit.
-
-[core_llm.py](./src/core_llm.py) implements interfacing to LLM provider, langchain and OpenAI API.
-
 ### Directory Structure
 ```
 RAG0
@@ -162,9 +162,13 @@ RAG0
 │       ui_main.py
 │       Calculate-Number-of-Tokens.ipynb
 │
-├───data
-│       
+├───data 
 ```
+
+[ui_main.py](./src/ui_main.py) implements UI by using streamlit.
+
+[core_llm.py](./src/core_llm.py) implements interfacing to LLM provider, langchain and OpenAI API.
+
 
 ## References
  1. [OPENAI Pricing](https://platform.openai.com/docs/pricing)
