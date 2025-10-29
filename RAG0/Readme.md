@@ -50,6 +50,8 @@ These content splitters will require chunk length and chunk overlap (to link con
 
 **chunk_overlap** : Is there other ways to express such linkage?
 
+![RAG Chunking](./img/RAG-chunking-v1.png)
+
 **Conclusion**: There are many splitters with configuration options. 
 
 ### Embedding
