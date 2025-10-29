@@ -58,20 +58,34 @@ by using cosine similarity metric (similarity search).
 Retrieved chunks via similarity search are "A" in RAG, query is the user's prompt.
 These chunks are send to LLM Provider as a **context** in the **rag prompt**. 
 
-- OpenAI - model selection trade-off cost - accuracy
-- Local - model selection trade-off latency - accuracy
 
 ![Embedding Flow](./img/embedding-flow.png)
 
 **Note**: Very large documents ingestion via streaming 
 
+There are many embedding provider options. At the top level,
+- LLM Provider (OpenAI,Gemini, Claude, ...) - model selection trade-off cost vs accuracy. 
+- Local - model selection trade-off latency vs accuracy. Running these models will require an infrastructure. 
+  The cost of running this infrastructure vs the cost of token consumption for embedding. 
+
+
+| LLM Provider | Token Cost? | Infrastructure cost? | Model          | Accuracy | Latency | Note |
+|--------------|-------------|----------------------|----------------|----------|---------|------|
+| OpenAI       | Yes         | minimal              | gpt-5-nano     |          | High    |      |
+| Local        | No          | ? need machine       | EmbeddingGemma |          | ?       |      |
+
+
 **Conclusion**: There are many options & architectural compositions.
 
 - [EmbeddingGemma on Hugging Face](https://huggingface.co/google/embeddinggemma-300m)
 - [SentenceTransformers Documentation](https://www.sbert.net/)
+- [BGE Embeddings on Hugging Face](https://docs.langchain.com/oss/python/integrations/text_embedding/bge_huggingface)
+- https://ollama.ai/
 
 ### Memory/Context Maintenance
-- 
+
+Application have multiple options to manage memory through the LLM Session. 
+
 - Local 
 - Claude   
 
