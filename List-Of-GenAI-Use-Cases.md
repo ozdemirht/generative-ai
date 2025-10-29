@@ -20,3 +20,5 @@ From [8 ways agentic AI will transform IT operations](https://www.cio.com/articl
 - Use-Case: Monitor server certificates and renew
 - Use-Case: Monitor disk space usage, remediate before it becomes a problem.
 - Use-Case: Picture an AI that spots a memory leak, spins up a replacement server, redirects workloads, and patches the faulty node before anyone even knows there’s an issue.
+
+From [Top 7-agentic AI use cases for cybersecurity](https://www.csoonline.com/article/4079887/top-7-agentic-ai-use-cases-for-cybersecurity.html)
