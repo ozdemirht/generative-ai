@@ -23,3 +23,4 @@ From [8 ways agentic AI will transform IT operations](https://www.cio.com/articl
 
 From [Top 7-agentic AI use cases for cybersecurity](https://www.csoonline.com/article/4079887/top-7-agentic-ai-use-cases-for-cybersecurity.html)
 - Use-Case: An AI agent can scan for new domain registrations that appear similar to your company, grab screenshots, perform WHOIS checks, and even draft takedown requests.
+- Use-Case: In the context of infrastructure, agents may also be able to speed-up the process of performing root cause analysis by parsing system logs more quickly, correlating results across data sources, and giving human engineers a major head start on their investigation
