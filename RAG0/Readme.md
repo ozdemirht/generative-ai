@@ -6,9 +6,10 @@ while considering the product lifecycle from inception to sunset.
 After we ship a solution to production and customers hire this solution for their jobs to be done, 
 we should be aware of TCO (Total Cost Ownership) regardless of whether it is an internal/external facing product for internal/external and paying/non-paying customers.
 
-![Generation](./img/Architecture-Generation-v1.png)
+| Generation without Augmentation                     | RAG                                   |
+|-----------------------------------------------------|---------------------------------------|
+| ![Generation](./img/Architecture-Generation-v1.png) | ![RAG](./img/Architecture-RAG-v1.png) |
 
-![RAG](./img/Architecture-RAG-v1.png)
 
 There are many use cases for Retrieval Augmented Generation (RAG), and we could categorize these use cases as;
    - unchanging corpus, 
