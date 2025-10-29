@@ -15,17 +15,17 @@ Where we decide to place a function will have a long term impact.
 
 ## Pipeline
  1. Ingestion
-     1. Document Loading 
-     1. Data Cleaning (regex, NLTK, spaCy, etc.)
-     1. Chunking
-     1. Embedding
-     1. Store chunks to vector database 
+     1. Load document 
+     1. Clean text data (regex, NLTK, spaCy, etc.)
+     1. Chunk/split text
+     1. Calculate embedding vector of each chunk
+     1. Store embedding vector and chunk to vector database 
 1. Q&A Session (Inferencing)
     1. Accept user query
-    1. Select relevant context from vector database
+    1. Select relevant context from vector database via similarity search
     1. Generate a prompt, containing instructions, context, and user's question
     1. Invoke LLM to generate a response
-    1. Present response to user
+    1. Present response to the user
     1. Update memory and wait for the next question (goto 2.i)
 
 ## Ingestion
@@ -60,7 +60,6 @@ by using cosine similarity metric (similarity search).
 Retrieved chunks via similarity search are "A" in RAG, query is the user's prompt.
 These chunks are send to LLM Provider as a **context** in the **rag prompt**. 
 
-
 ![Embedding Flow](./img/embedding-flow.png)
 
 **Note**: Very large documents ingestion via streaming 
@@ -79,17 +78,21 @@ There are many embedding provider options. At the top level,
 
 **Conclusion**: There are many options & architectural compositions.
 
+- [Claude Embeddings](https://docs.claude.com/en/docs/build-with-claude/embeddings), there are corpus specific embedding models also.
 - [EmbeddingGemma on Hugging Face](https://huggingface.co/google/embeddinggemma-300m)
 - [SentenceTransformers Documentation](https://www.sbert.net/)
 - [BGE Embeddings on Hugging Face](https://docs.langchain.com/oss/python/integrations/text_embedding/bge_huggingface)
 - https://ollama.ai/
+- [Matryoshka Embeddings](https://sbert.net/examples/sentence_transformer/training/matryoshka/README.html)
+- [Hierarchical Embeddings](https://github.com/nalexai/hyperlib)
+- [Poincaré Embeddings for Learning Hierarchical Representations](https://arxiv.org/abs/1705.08039)
 
 ### Memory/Context Maintenance
 
 Application have multiple options to manage memory through the LLM Session. 
 
 - Local 
-- Claude   
+- [Claude Prompt Caching](https://docs.claude.com/en/docs/build-with-claude/prompt-caching)   
 
 ### Prompt
 Prompt quality is very important for quality completion. 
