@@ -22,3 +22,4 @@ From [8 ways agentic AI will transform IT operations](https://www.cio.com/articl
 - Use-Case: Picture an AI that spots a memory leak, spins up a replacement server, redirects workloads, and patches the faulty node before anyone even knows there’s an issue.
 
 From [Top 7-agentic AI use cases for cybersecurity](https://www.csoonline.com/article/4079887/top-7-agentic-ai-use-cases-for-cybersecurity.html)
+- Use-Case: An AI agent can scan for new domain registrations that appear similar to your company, grab screenshots, perform WHOIS checks, and even draft takedown requests.
