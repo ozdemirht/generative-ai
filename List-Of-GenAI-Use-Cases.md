@@ -18,4 +18,5 @@ From [8 ways agentic AI will transform IT operations](https://www.cio.com/articl
 - Note: Generally most business workloads have a state or a workflow is in-progress. Restarting without knowing the state of application layer may create data corruption problems and more surgical work.
 - Use-Case: the AI agent might detect a database service that’s becoming unresponsive, correlate all related signals, and then recommend restarting the service rather than rebooting the entire server.
 - Use-Case: Monitor server certificates and renew
-- Use-Case: Monitor disk space usage, remediate before it becomes a problem. 
+- Use-Case: Monitor disk space usage, remediate before it becomes a problem.
+- Use-Case: Picture an AI that spots a memory leak, spins up a replacement server, redirects workloads, and patches the faulty node before anyone even knows there’s an issue.
