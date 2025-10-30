@@ -249,12 +249,54 @@ The cost of operation has several components
     1. Number of input and output tokens in each call
     1. Input tokens is determined by the tokenized form of prompt that system submits to LLM provider. For instance, RAG prompt has 3 parts; instructions, context, and user's prompt/question. 
     1. Output tokens is determined by the system when calling to LLM provider. Application can limit the number of tokens to be generated. This is a parameter in API call. 
+ 1. Testing during development
+ 1. Testing in deployment
+ 1. Maintenance
 
 ![Shows Token Consumption](./img/UI-main_screen_v2.png)
 
 [Calculate-Number-of-Tokens.ipynb](./src/Calculate-Number-of-Tokens.ipynb) shows how to calculate token cost. 
 
-## Observability 
+## Testing for production readiness
+Testing a RAG system for production is different from 
+the Acceptance Tests done by an end-users, product team, or QA team. 
+
+These systems require a golden tests (like needs of Supervised Reinforcement Learning) so that 
+an automated evaluation can be executed as a decision criteria to ship to production or not.
+
+Due to observed failures in production sessions, 
+this golden tests expected to evolve. As long as withing API rate limits, 
+an automated evaluation can run tests in parallel.  
+
+These golden tests will include Q&A session with a hosted LLM. 
+Due to increasing amount of tests, LLM-Judge relying on the best model probably the best bet to produce a better system. 
+
+## Failure Modes
+The RAG system should need to handle many operational challenges such as 
+   1. how to handle rate limiting errors from hosted LLM.
+   1. how to handle network connectivity issues.
+      1. For instance, LLM response does not arrive due to intermittent network connection.   
+   1. how to handle unresponsive (hosted) vector database.
+
+There are known best practices to handle stateless and stateful interactions in distributed systems. 
+Today, most hosted LLM provides a stateless API. 
+Therefore, application needs to maintain the state of session. 
+Should the application persist this state data after every change so that it could recover (like WAL files in database/Kafka)?
+
+## CICD and Ops
+Automated deployment pipelines are well understood. 
+In addition to known (resource utilization metrics, 
+performance metrics p90/p95 latency, etc.), rate limiting, etc.), 
+operations also needs to monitor
+- prompt attacks,
+- guardrail violations,
+- input and output token consumption, 
+- total token consumption,
+- hosted LLM API latency with respec to 1st generation,...,nth generation in a session,
+- hosted LLM rate limiting errors, 
+- quality of response (assuming that the system is collecting feedback on the generated responses). 
+
+### Observability 
 
 Trace of interactions within a session is important data 
 to understand the behavior of the system and improve each step. 
@@ -267,10 +309,30 @@ For instance, which application is consuming the most tokens, which sessions are
 which step in these flows is consuming the most token, etc.
 These insights will help us to decide where we will invest to improve the system's cost/performance.  
 
+## Disaster Recovery
+A production system should have a plan to handle large scale disruptions. 
+Today, there are best practices in place to manage our infrastructure and services. 
+However, operating a LLM-RAG based system will introduce new problems due to new dependencies.  
+For instance, outage by major cloud infrastructure provider make hosted LLMs unreachable.  
+For instance, disruption during loading embeddings data to a hosted vector storage may corrupt what has been stored in the vector database. 
+For instance, update of slowly changing document corpus maybe disrupted. How could it be verfieid that the vector database has the complete and accurate retrieval data?
+
+## Continuous Maintenance
+Today, there are MLOps best practices to manage model drift. 
+
+LLM vendors will continue to offer new models at different cost/performance points. 
+
+For instance, what the scope of change is
+- when the chosen embedding needs to change, or 
+- when the chosen LLM model needs to change.
+
+Is moving to better and brighter LLM model the same as replacing our current machine with a brand new one?
+These changes will likely to require in-depth assessments before making a decision. 
+
 ## Advanced RAG
 
 Advanced RAG introduces additional steps to ingestion and inferencing pipelines for
-- Guardrails to redact PII data, refuse in-appropriate input/output. 
+- Guardrails to redact PII data, refuse in-appropriate input/output, and transparency for actions taken.  
 - Query re-writing to generate good completion by translating the user's prompt to an effective prompt. 
 
 These additions harden the system while improving the quality of responses for production.
