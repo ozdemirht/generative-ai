@@ -101,10 +101,10 @@ Employees will be able to make informed decisions while being aware of a large b
 Vocabulary-Buddy utilizes this corpus to generate assessments (quizzes) by leveraging LLM. 
 Vocabulary-Buddy persists each learner’s prior assignments and assessments so that it can give better context to LLM. 
 For instance, LLM may ask the list of words a learner answered correctly with probability of >75%, 25%<75%, and <25% (quiz generation policy) so that a generated quiz contains questions with different difficult levels for the learner. 
-Vocabulary-Buddy could fine-tune the policy based on the learner’s feedback so that it can establish a sustained user engagement. 
+Vocabulary-Buddy could fine-tune the policy (RL) based on the learner’s feedback so that it can establish a sustained user engagement. 
 
 **Teller-Agent**: ATMs have been deployed, but LLMs have potential to push these to the next level by its multimodal interaction capabilities. 
-An application can fulfill the current functionalities as well as offer personalized products to patrons by combining individual information with available products and asking LLM to generate product recommendations. 
+An application can fulfill the current functionalities as well as offer personalized products to patrons by combining individual information (via tools) with available products (via vector store) and asking LLM to generate product recommendations. 
 
 [List Of GenAI Use Cases](../List-Of-GenAI-Use-Cases.md) has more use cases. 
 
