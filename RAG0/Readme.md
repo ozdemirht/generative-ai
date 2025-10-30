@@ -1,4 +1,4 @@
-# Chat with your book (LLM with RAG)
+# Chat with your book (LLM with naive RAG)
 
 ## Motivation
 The objective is to deep dive all steps of Retrieval Augmented Generation (RAG) solution 
@@ -6,7 +6,7 @@ while considering the product lifecycle from inception to sunset.
 After we ship a solution to production and customers hire this solution for their jobs to be done, 
 we should be aware of TCO (Total Cost Ownership) regardless of whether it is an internal/external facing product for internal/external and paying/non-paying customers.
 
-| Generation without Augmentation                     | RAG                                   |
+| Generation without Augmentation                     | naive RAG                             |
 |-----------------------------------------------------|---------------------------------------|
 | ![Generation](./img/Architecture-Generation-v1.png) | ![RAG](./img/Architecture-RAG-v1.png) |
 
@@ -135,7 +135,7 @@ Where we decide to place a function will have a long term impact.
 
 - remove extra white space
 - replace '\r\n' by '\n'
-- stopwords (?)
+- stopwords
 
 ### Chunking
 
@@ -251,6 +251,8 @@ The cost of operation has several components
 ![Shows Token Consumption](./img/UI-main_screen_v2.png)
 
 [Calculate-Number-of-Tokens.ipynb](./src/Calculate-Number-of-Tokens.ipynb) shows how to calculate token cost. 
+
+## Observability 
 
 ## Summary
 The number of configurations when building ingestion and Q&A steps are considerable.  
