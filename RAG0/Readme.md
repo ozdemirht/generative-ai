@@ -163,7 +163,11 @@ These content splitters will require chunk length and chunk overlap (to link con
 Let's say chunk_size=1000 and chunk_overlap=100 (10% of chunk_size). 
 Except the first and the last chunks, all chunks will have effectively 800 characters.
 Hence, the final document size stored in vector store will increase by (1000/800)=125%, 
-this amplification is due to chunk_overlap.  
+this amplification is due to chunk_overlap. For instance, if the original document size is 100K, 
+then 125% amplification results in (100K*125%=)125K stored document size in vector store. 
+It can be generalized as  
+
+$$Amplification=\frac{chunk\_size}{chunk\_size - (2* chunk\_overlap)} *100\%$$
 
 **Conclusion**: There are many splitters with configuration options. 
 
