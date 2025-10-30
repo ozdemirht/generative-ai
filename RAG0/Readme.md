@@ -190,7 +190,9 @@ There are many embedding provider options. At the top level,
 
 Application have multiple options to manage memory through the LLM Session. 
 
-- Local 
+- Local, application manages the memory of the session and attaches to related to prompts before sending to hosted LLM.  
+  This increase the latency due to the amount data transferred and the number of input tokens hosted LLM should process. 
+  As the session progress the accumulated data increases. There are many approaches to remediate such that keeping only messages of select roles, keeping only the recent context, summarize the selected messages as context (via LLM?).
 - [Claude Prompt Caching](https://docs.claude.com/en/docs/build-with-claude/prompt-caching)   
 
 ### Prompt
