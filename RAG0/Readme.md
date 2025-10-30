@@ -160,6 +160,11 @@ These content splitters will require chunk length and chunk overlap (to link con
 
 ![RAG Chunking](./img/RAG-chunking-v1.png)
 
+Let's say chunk_size=1000 and chunk_overlap=100 (10% of chunk_size). 
+Except the first and the last chunks, all chunks will have effectively 800 characters.
+Hence, the final document size stored in vector store will increase by (1000/800)=125%, 
+this amplification is due to chunk_overlap.  
+
 **Conclusion**: There are many splitters with configuration options. 
 
 ### Embedding
