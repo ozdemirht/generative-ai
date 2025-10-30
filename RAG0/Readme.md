@@ -422,4 +422,6 @@ Answer:
 ## Appendix
 
 ### Claude Agent Skills
+See [Claude Agent Skills](https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills) for details.
+
 ![Claude Agent Skills](./img/Claude-Skills.png)
