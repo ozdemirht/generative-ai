@@ -254,6 +254,23 @@ The cost of operation has several components
 
 ## Observability 
 
+Trace of interactions within a session is important data 
+to understand the behavior of the system and improve each step. 
+As Agentic AI transform execution flow from "how" to "what", developers need a tool to understand 
+how an agent decided to utilize available context, tools, resources, APIs, MCP servers.  
+
+The cost of operations largely depends on the token consumption and 
+the observability tools will surface such information at very fine granularity.
+For instance, which application is consuming the most tokens, which sessions are consuming the most tokens, 
+which step in these flows is consuming the most token, etc.
+These insights will help us to decide where we will invest to improve the system's cost/performance.  
+
+## Advanced RAG
+
+This introduces additional steps to ingestion and inferencing pipelines for
+- Guardrails to redact PII data, refuse in-appropriate input/output. 
+- Query re-writing to generate good completion by translating the user's prompt to an effective prompt. 
+
 ## Summary
 The number of configurations when building ingestion and Q&A steps are considerable.  
 
