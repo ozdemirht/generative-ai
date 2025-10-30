@@ -362,10 +362,12 @@ Advanced RAG introduces additional steps to ingestion and inferencing pipelines 
 These additions harden the system while improving the quality of responses for production.
 
 ## Summary
-The number of configurations when building ingestion and Q&A steps are considerable.  
 
-Architecture choices will depend on the application. 
-The cost running some steps in owned infrastructure vs hiring LLM providers for jobs to be done. 
+The number of implementation configurations when building ingestion and Q&A steps are considerable.  
+
+Architecture choices will depend on the application, and its ROI. 
+Because the cost of running some steps in owned infrastructure vs hiring hosted LLM for jobs to be done 
+will position implementation choices to very different points on the TCO vs value grid.  
 
 ## Details
 
@@ -396,6 +398,19 @@ RAG0
 
 [core_llm.py](./src/core_llm.py) implements interfacing to LLM provider, langchain and OpenAI API.
 
+## RAG Prompt
+Application used the following prompt (see [ui_main.py](./src/ui_main.py)) in **hub.pull("rlm/rag-prompt")**.
+```
+prompt = """
+You are an assistant for question-answering tasks. 
+Use the following pieces of retrieved context to answer the question. 
+If you don't know the answer, just say that 'I do not know.'. 
+Use three sentences maximum and keep the answer concise.
+Context: {context} 
+Question: {question}
+Answer:
+"""
+```
 
 ## References
  1. [OPENAI Pricing](https://platform.openai.com/docs/pricing)
