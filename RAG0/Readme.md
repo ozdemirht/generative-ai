@@ -269,9 +269,11 @@ These insights will help us to decide where we will invest to improve the system
 
 ## Advanced RAG
 
-This introduces additional steps to ingestion and inferencing pipelines for
+Advanced RAG introduces additional steps to ingestion and inferencing pipelines for
 - Guardrails to redact PII data, refuse in-appropriate input/output. 
 - Query re-writing to generate good completion by translating the user's prompt to an effective prompt. 
+
+These additions harden the system while improving the quality of responses for production.
 
 ## Summary
 The number of configurations when building ingestion and Q&A steps are considerable.  
