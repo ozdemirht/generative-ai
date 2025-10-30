@@ -310,12 +310,17 @@ which step in these flows is consuming the most token, etc.
 These insights will help us to decide where we will invest to improve the system's cost/performance.  
 
 ## Disaster Recovery
+
 A production system should have a plan to handle large scale disruptions. 
 Today, there are best practices in place to manage our infrastructure and services. 
 However, operating a LLM-RAG based system will introduce new problems due to new dependencies.  
 For instance, outage by major cloud infrastructure provider make hosted LLMs unreachable.  
 For instance, disruption during loading embeddings data to a hosted vector storage may corrupt what has been stored in the vector database. 
-For instance, update of slowly changing document corpus maybe disrupted. How could it be verfieid that the vector database has the complete and accurate retrieval data?
+For instance, update of slowly changing document corpus maybe disrupted. How could it be verified that the vector database has the complete and accurate retrieval data? 
+Should we be worried about the integrity of data in vector database as a security threat surface?
+
+As more of these workloads shipped to production, 
+there will be more challenges and lessons learned and finally evolving best practices. 
 
 ## Continuous Maintenance
 Today, there are MLOps best practices to manage model drift. 
@@ -328,6 +333,10 @@ For instance, what the scope of change is
 
 Is moving to better and brighter LLM model the same as replacing our current machine with a brand new one?
 These changes will likely to require in-depth assessments before making a decision. 
+
+Eventually, these should be reduced to managing 
+these changes as a system configuration data 
+in a secure hub (like [AWS Systems Manager Parameter Store](https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html)). 
 
 ## Advanced RAG
 
