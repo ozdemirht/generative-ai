@@ -243,7 +243,10 @@ The bigger context increases tokens/query and latency because LLM needs to proce
 - Summarize memory to stay within **context_window** constraint.
 
 #### Invoke with context and user query
-Here, the system finally calls LLM to obtain a response. 
+
+The system finally calls LLM API to obtain a response, and presents to the user. 
+If the system is user aware, 
+then these systems could provide differentiated experience by using a differt LLM model (with more parameters). 
 
 ## Cost 
 The cost of operation has several components
@@ -274,11 +277,14 @@ These systems require a golden tests (like needs of Supervised Reinforcement Lea
 an automated evaluation can be executed as a decision criteria to ship to production or not.
 
 Due to observed failures in production sessions, 
-this golden tests expected to evolve. As long as withing API rate limits, 
-an automated evaluation can run tests in parallel.  
+this golden tests expected to evolve. As long as the number of calls to hosted LLM API is within API rate limits, 
+an automated evaluation can run these tests in parallel and hopefully the time to complete these automated tests are not a huge concern in deployment time.
+Because, in operations, a capability to ship a revised system to production as quickly as possible is very important tool especially when a rollback is not a viable option.
+Therefore, it is not preferable to have these preventive measures delaying the time to ship.  
 
-These golden tests will include Q&A session with a hosted LLM. 
-Due to increasing amount of tests, LLM-Judge relying on the best model probably the best bet to produce a better system. 
+These golden tests will include Q&A sessions with a hosted LLM. 
+Due to increasing amount of tests, 
+LLM-Judge relying on the best (and expensive) model probably the best bet to produce a better completions. 
 
 ## Failure Modes
 The RAG system should need to handle many operational challenges such as 
