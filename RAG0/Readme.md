@@ -386,6 +386,10 @@ RAG0
  1. [OPENAI Pricing](https://platform.openai.com/docs/pricing)
  1. [Navigating OpenAI Embeddings API Pricing: Token Count vs. API Calls](https://community.openai.com/t/navigating-openai-embeddings-api-pricing-token-count-vs-api-calls/289081)
  1. [From Tokens to Costs: Embedding Estimation with OpenAI API](https://mindfulcto.com/from-tokens-to-costs-embedding-estimation-with-openai-api-8c535753a479)
-## Q&A
+ 1. [OpenAI Apps-SDK](https://developers.openai.com/apps-sdk/deploy)
+ 1. [Claude Agent Skills](https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills)
+  
+## Appendix
 
-### Is there a difference between predict, generate, completion in LLM?
+### Claude Agent Skills
+![Claude Agent Skills](./img/Claude-Skills.png)
