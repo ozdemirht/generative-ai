@@ -432,7 +432,9 @@ Answer:
  1. [From Tokens to Costs: Embedding Estimation with OpenAI API](https://mindfulcto.com/from-tokens-to-costs-embedding-estimation-with-openai-api-8c535753a479)
  1. [OpenAI Apps-SDK](https://developers.openai.com/apps-sdk/deploy)
  1. [Claude Agent Skills](https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills)
-  
+ 1. [LangGraph Workflows - Agents](https://docs.langchain.com/oss/python/langgraph/workflows-agents) 
+ 1. [Is RAG Dead? The Rise of Context Engineering and Semantic Layers for Agentic AI](https://towardsdatascience.com/beyond-rag/)
+
 ## Appendix
 
 ### Claude Agent Skills
