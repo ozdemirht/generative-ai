@@ -66,6 +66,13 @@ A Study-Buddy could take an animated character form (via video generators) for e
 A Study-Buddy could tune into the student’s learning styles (visual learner, auditory learner (by listening), read/write learners, kinesthetic learners (by doing)) 
 for this class. 
 
+**Patent-Assistant**: An important step in patent application preparation is to find existing patents and patent applications. 
+Some large companies have specialized teams to help with these searches and verify the probability of success. 
+Members of these teams are trained and developed skills to conduct these searches efficiently and evaluate each finding against the application in preparation. 
+A Patent-Assistant based on LLM can support search as well as comparative analysis by using the claims. 
+Furthermore, a Patent-Assistant could help to identify **whitespaces** in intellectual property landscape.
+
+
 **Course-Selection-Assistant**: High school students start to face the course selection process (preparation for next level of education). 
 The high school policy manual(Student Handbook) explains all the rules about the graduation such as mandatory courses/tracks, number of credits, mandatory exams. 
 The school courses document (program of studies) explains the available courses and dependencies between these courses if any. 
@@ -193,6 +200,11 @@ There are many embedding provider options. At the top level,
 | Local        | No          | ? need machine       | EmbeddingGemma |          | ?       |      |
 
 
+**Scalability** with respect to the size of document corpus needs to be considered. 
+What if the application needs to store 100, 1000, or 1,000,000 medium size documents?
+How will it impact the latency and quality of retrieval? 
+Will k=3 or 4 be sufficient to provided meaningful augmentation for each user's query?
+
 **Conclusion**: There are many options & architectural compositions.
 
 - [Claude Embeddings](https://docs.claude.com/en/docs/build-with-claude/embeddings), there are corpus specific embedding models also.
@@ -228,6 +240,8 @@ This table do not contain neither all LLM Providers nor models or prompt variati
 | Claude       | sonnet-4.5 | prompt_1 | ?%               |      |
 
 An evaluation set will be needed to determine which combination should be shipped.
+Although there are plenty of best practices in Prompt Engineering, 
+constructing a good prompt for the task at hand is still a [research topic](https://arxiv.org/abs/2510.01171). 
 
 **Conclusion**: Need to experiment with content of "rag prompt".
 
@@ -246,6 +260,10 @@ The bigger context increases tokens/query and latency because LLM needs to proce
 - **Maximum Marginal Reference** (retrieve diverse context document chunks)
 - Compression (ContextualCompressionRetriever)
 - SelfQueryRetriever
+
+The motivation to pull relevant information is also brought in 
+graph storage and retrieval solutions ([GraphRAG](https://microsoft.github.io/graphrag/)) 
+as an alternative to the current vector stores. 
 
 #### Update Memory if needed
 
@@ -362,6 +380,14 @@ Eventually, these should be reduced to managing
 these changes as a system configuration data 
 in a secure hub (like [AWS Systems Manager Parameter Store](https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html)). 
 
+**Cost of change** is an important criteria to verify in each step of SDLC. 
+Our processes should be biased towards avoiding **cascaded changes** in these systems.   
+
+**Pace of change** in technical capabilities will drive the modernization activities as long as it is within the organization's cadence to absorbing such changes. 
+If it becomes too frequent, then finding good ROI to convince CFO to sign off these modernization efforts will be a challenge.
+At this point, it will depend on the company's appetite to stay with the older stack. 
+
+
 ## Advanced RAG
 
 Advanced RAG introduces additional steps to ingestion and inferencing pipelines for
@@ -436,6 +462,9 @@ Answer:
  1. [Is RAG Dead? The Rise of Context Engineering and Semantic Layers for Agentic AI](https://towardsdatascience.com/beyond-rag/)
  1. [Google’s URL Context Grounding: Another Nail in RAG’s Coffin?](https://towardsdatascience.com/googles-url-context-grounding-another-nail-in-rags-coffin/)
  1. [Hugging Face: Embedding Leaderboard](https://huggingface.co/spaces/mteb/leaderboard)
+ 1. [Large language model for patent concept generation](https://www.sciencedirect.com/science/article/pii/S1474034625001946)
+ 1. [Verbalized Sampling: How to Mitigate Mode Collapse and Unlock LLM Diversity](https://arxiv.org/abs/2510.01171)
+
 ## Appendix
 
 ### Claude Agent Skills
