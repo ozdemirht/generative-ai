@@ -434,7 +434,8 @@ Answer:
  1. [Claude Agent Skills](https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills)
  1. [LangGraph Workflows - Agents](https://docs.langchain.com/oss/python/langgraph/workflows-agents) 
  1. [Is RAG Dead? The Rise of Context Engineering and Semantic Layers for Agentic AI](https://towardsdatascience.com/beyond-rag/)
-
+ 1. [Google’s URL Context Grounding: Another Nail in RAG’s Coffin?](https://towardsdatascience.com/googles-url-context-grounding-another-nail-in-rags-coffin/)
+ 1. [Hugging Face: Embedding Leaderboard](https://huggingface.co/spaces/mteb/leaderboard)
 ## Appendix
 
 ### Claude Agent Skills
