@@ -64,7 +64,7 @@ If the operating costs are reasonable, a Study-Buddy could generate short videos
 enact experiments/events, or find a segment of existing multimedia. 
 A Study-Buddy could take an animated character form (via video generators) for engaging user experience. 
 A Study-Buddy could tune into the student’s learning styles (visual learner, auditory learner (by listening), read/write learners, kinesthetic learners (by doing)) 
-for this class. 
+for this class. Similarly, Driver Ed class could also utilize Driver Manual as a topic to be mastered.  
 
 **Patent-Assistant**: An important step in patent application preparation is to find existing relevant patents and patent applications. 
 Some large companies have specialized teams to help with these searches and verify the probability of success. 
