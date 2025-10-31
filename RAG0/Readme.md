@@ -380,13 +380,14 @@ Eventually, these should be reduced to managing
 these changes as a system configuration data 
 in a secure hub (like [AWS Systems Manager Parameter Store](https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html)). 
 
-**Cost of change** is an important criteria to verify in each step of SDLC. 
-Our processes should be biased towards avoiding **cascaded changes** in these systems.   
+**Cost of change** is an important criteria to verify in each step of SDLC processes. 
+Our processes should be biased towards avoiding **cascaded changes** in these systems. 
+Therefore, (classics) loose coupling, configurability, extensibility, etc. software system attributes should be enforced (by Reviewer-LLM?).  
 
-**Pace of change** in technical capabilities will drive the modernization activities as long as it is within the organization's cadence to absorbing such changes. 
-If it becomes too frequent, then finding good ROI to convince CFO to sign off these modernization efforts will be a challenge.
+**Pace of change** in technical capabilities will drive the modernization activities as long as it is within the organization's cadence to absorb these changes. 
+If it becomes too frequent, then finding a good ROI to convince CFO to sign off these modernization efforts will be a challenge.
 At this point, it will depend on the company's appetite to stay with the older stack. 
-
+Eventually, CFOs will figure out how to depreciate these investments. 
 
 ## Advanced RAG
 
