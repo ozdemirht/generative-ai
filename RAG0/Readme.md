@@ -368,6 +368,11 @@ Advanced RAG introduces additional steps to ingestion and inferencing pipelines 
 - Guardrails to redact PII data, refuse in-appropriate input/output, and transparency for actions taken.  
 - Query re-writing to generate good completion by translating the user's prompt to an effective prompt. 
 
+
+| Advanced RAG - Ingestion                         | Advanced RAG - Inferencing                    |
+|--------------------------------------------------|-----------------------------------------------|
+| ![ARAG Ingestion](./img/ARAG-ingestion-flow.png) | ![ARAG Inference](./img/ARAG-inferencing.png) |
+
 These additions harden the system while improving the quality of responses for production.
 
 ## Summary
