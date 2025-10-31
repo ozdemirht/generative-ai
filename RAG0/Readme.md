@@ -66,10 +66,10 @@ A Study-Buddy could take an animated character form (via video generators) for e
 A Study-Buddy could tune into the student’s learning styles (visual learner, auditory learner (by listening), read/write learners, kinesthetic learners (by doing)) 
 for this class. 
 
-**Patent-Assistant**: An important step in patent application preparation is to find existing patents and patent applications. 
+**Patent-Assistant**: An important step in patent application preparation is to find existing relevant patents and patent applications. 
 Some large companies have specialized teams to help with these searches and verify the probability of success. 
 Members of these teams are trained and developed skills to conduct these searches efficiently and evaluate each finding against the application in preparation. 
-A Patent-Assistant based on LLM can support search as well as comparative analysis by using the claims. 
+A Patent-Assistant based on LLM can support search as well as prepare comparative analysis by using the claims. 
 Furthermore, a Patent-Assistant could help to identify **whitespaces** in intellectual property landscape.
 
 
