@@ -4,7 +4,7 @@
 The objective is to deep dive all steps of Retrieval Augmented Generation (RAG) solution 
 while considering the product lifecycle from inception to sunset. 
 After we ship a solution to production and customers hire this solution for their jobs to be done, 
-we should be aware of TCO (Total Cost Ownership) regardless of whether it is an internal/external facing product for internal/external and paying/non-paying customers.
+we should be aware of TCO (Total Cost of Ownership) regardless of whether it is an internal/external facing product for internal/external and paying/non-paying customers.
 
 | Generation without Augmentation                     | naive RAG                             |
 |-----------------------------------------------------|---------------------------------------|
