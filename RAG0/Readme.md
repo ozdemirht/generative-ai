@@ -191,8 +191,17 @@ These chunks are send to LLM Provider as a **context** in the **rag prompt**.
 | chunks[42]  | [spot, disorders are seen as they ...]  | [ 0.079357    0.06106947  0.08273438  0.02950769 -0.04516806  0.07001141] ...|
 | chunks[43]  | [prince does not spend much on co ...]  | [ 0.05889072  0.04274347  0.09256141  0.04474926 -0.0202273   0.01886031] ...|
 
+Vector is used as a key of the corresponding chunk. 
 
 ![Embedding Flow](./img/embedding-flow.png)
+
+Once, an application loads all chunks to vector store, each chunk is a point in the following graphs. 
+(see [VS Retrieval with FAISS](./src/Retrieval_FAISS.ipynb) for code and details)
+
+| 2D                        | 3D                        |
+|---------------------------|---------------------------|
+| ![2D](./img/VS-2D-f1.png) | ![3D](./img/VS-3D-f1.png) |
+
 
 **Note**: Very large documents ingestion via streaming 
 
@@ -265,13 +274,48 @@ The bigger context increases tokens/query and latency because LLM needs to proce
 ![RAG Inferencing Flow](./img/RAG-inferencing.png)
 
 #### Select relevant data from Vector Database by using a user query
-- **Maximum Marginal Reference** (retrieve diverse context document chunks)
-- Compression (ContextualCompressionRetriever)
-- SelfQueryRetriever
 
+For instance, 5 nearest neighbours of given query are  
+
+	Index	Distance	Chunk	Embedding
+0	43	0.623361	prince does not spend much on colonies, for wi...	[0.058890715, 0.04274347, 0.09256141, 0.044749...
+1	42	0.802146	spot, disorders are seen as they spring up, an...	[0.079357, 0.061069474, 0.08273438, 0.02950769...
+2	221	0.928903	Never let any Government imagine that it can c...	[0.050540738, 0.10423061, 0.01961176, -0.04452...
+3	44	0.945794	ones they cannot; therefore the injury that is...	[0.009223385, 0.07131818, 0.052186664, 0.00611...
+4	64	0.956113	this is not occasioned by the little or abunda...	[0.013173358, 0.102018714, 0.061939694, -0.027...
+
+This can be visualized as 
+
+![Vector Store Search Illustration](./img/VS-Search.png)
+
+where yellow point the query, purple points are 5 nearest neighbours, the remaining points are the indexed chunks in the vetor database. 
+(see [VS Retrieval with FAISS](./src/Retrieval_FAISS.ipynb) for code and details)
+
+**How to extract additional filtering conditions from user's query to guide retrieval?**
+**SelfQueryRetriever** leverages another LLM call to extract metadata from the user's query. 
+For instance, "Generate summary of what prof. X explained during the class on week-9 about the hill climbers?". 
+Expectation is to identify, for instance, "class on week-9" so that the scope of search is not the whole semester.
+FAISS, Chromadb, etc. all have filters to support focused retrieval. 
+Another example is for instance finding restaurants serving  "italian" cuisine and located within 3 miles from our location. 
+The second predicate is proximity search in 2D while the first predicate filters restaurants based on which cuisine served.
+
+**How to prevent sending redundant chunks?**
+**Maximum Marginal Reference** attempts to retrieve diverse set of chunks 
+to prevent sending the same set of information as a context. 
+Intuition is that **too** similar chunks may be redundant, hence, 
+picking diverse set of augments but close to the query point should provide relevant and rich context.  
+
+**How to prevent sending irrelevant parts in the chunks?**
+**Compression (ContextualCompressionRetriever)** of augments review 
+the returned chunks and takes out the part of chunk relevant to the query. 
+Intuition is that now all information in the selected chunks are relevant for the user's query. 
+Because it reduces the amount of context, it reduces the token consumption. 
+
+**Are there other ways to represent 'relationship' between chunks and query?**
 The motivation to pull relevant information is also brought in 
 graph storage and retrieval solutions ([GraphRAG](https://microsoft.github.io/graphrag/)) 
-as an alternative to the current vector stores. 
+as an alternative to the current vector stores based on representing each chunk/document 
+as a vector in high dimensional space. 
 
 #### Update Memory if needed
 
@@ -474,6 +518,7 @@ Answer:
  1. [Large language model for patent concept generation](https://www.sciencedirect.com/science/article/pii/S1474034625001946)
  1. [Verbalized Sampling: How to Mitigate Mode Collapse and Unlock LLM Diversity](https://arxiv.org/abs/2510.01171)
  1. [Redis LangCache](https://redis.io/docs/latest/develop/ai/langcache/)
+ 1. [Self Query Retriever](https://medium.com/@danushidk507/rag-x-self-query-retriever-952dd55c68ed)
 
 ## Appendix
 
