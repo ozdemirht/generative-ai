@@ -184,6 +184,14 @@ by using cosine similarity metric (similarity search).
 Retrieved chunks via similarity search are "A" in RAG, query is the user's prompt.
 These chunks are send to LLM Provider as a **context** in the **rag prompt**. 
 
+| Chunk Id    | Content                                 | Embedding |
+|-------------|-----------------------------------------|-----------|
+| chunks[40]  | [Now I say that those dominions w ...]  | [-0.02507091  0.01606758  0.06972311 -0.11896194 -0.04349811 -0.0283208 ] ...| 
+| chunks[41]  | [only to bear in mind two conside ...]  | [-0.012266    0.05484197  0.01756565 -0.09092116 -0.0095341  -0.02421725] ...|
+| chunks[42]  | [spot, disorders are seen as they ...]  | [ 0.079357    0.06106947  0.08273438  0.02950769 -0.04516806  0.07001141] ...|
+| chunks[43]  | [prince does not spend much on co ...]  | [ 0.05889072  0.04274347  0.09256141  0.04474926 -0.0202273   0.01886031] ...|
+
+
 ![Embedding Flow](./img/embedding-flow.png)
 
 **Note**: Very large documents ingestion via streaming 
