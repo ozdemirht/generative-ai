@@ -218,8 +218,8 @@ There are [many embedding](https://docs.langchain.com/oss/python/integrations/te
 
 <details>
 <title>Hugging Face: Embedding Leaderboard</title>
-[Hugging Face: Embedding Leaderboard](https://huggingface.co/spaces/mteb/leaderboard)
 
+[Hugging Face: Embedding Leaderboard](https://huggingface.co/spaces/mteb/leaderboard)
 ![](./img/HF-Embedding-Leaderboard.png)
 </details>
 
