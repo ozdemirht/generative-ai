@@ -205,7 +205,7 @@ Once, an application loads all chunks to vector store, each chunk is a point in 
 
 **Note**: Very large documents ingestion via streaming 
 
-There are many embedding provider options. At the top level,
+There are [many embedding](https://docs.langchain.com/oss/python/integrations/text_embedding) provider options. At the top level,
 - LLM Provider (OpenAI,Gemini, Claude, ...) - model selection trade-off cost vs accuracy. 
 - Local - model selection trade-off latency vs accuracy. Running these models will require an infrastructure. 
   The cost of running this infrastructure vs the cost of token consumption for embedding. 
@@ -309,7 +309,7 @@ picking diverse set of augments but close to the query point should provide rele
 **How to prevent sending irrelevant parts in the chunks?**
 **Compression (ContextualCompressionRetriever)** of augments review 
 the returned chunks and takes out the part of chunk relevant to the query. 
-Intuition is that now all information in the selected chunks are relevant for the user's query. 
+Intuition is that not all information in the selected chunks are relevant for the user's query. 
 Because it reduces the amount of context, it reduces the token consumption. 
 
 **Are there other ways to represent 'relationship' between chunks and query?**
@@ -320,7 +320,7 @@ as a vector in high dimensional space.
 
 #### Update Memory if needed
 
-- Summarize memory to stay within **context_window** constraint.
+In this step, an application summarizes memory to stay within **context_window** constraint/budget.
 
 #### Invoke with context and user query
 
