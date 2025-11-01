@@ -465,6 +465,7 @@ Answer:
  1. [Hugging Face: Embedding Leaderboard](https://huggingface.co/spaces/mteb/leaderboard)
  1. [Large language model for patent concept generation](https://www.sciencedirect.com/science/article/pii/S1474034625001946)
  1. [Verbalized Sampling: How to Mitigate Mode Collapse and Unlock LLM Diversity](https://arxiv.org/abs/2510.01171)
+ 1. [Redis LangCache](https://redis.io/docs/latest/develop/ai/langcache/)
 
 ## Appendix
 
