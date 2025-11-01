@@ -216,6 +216,12 @@ There are [many embedding](https://docs.langchain.com/oss/python/integrations/te
 | OpenAI       | Yes         | minimal              | gpt-5-nano     |          | High    |      |
 | Local        | No          | ? need machine       | EmbeddingGemma |          | ?       |      |
 
+<details>
+<title>Hugging Face: Embedding Leaderboard</title>
+[Hugging Face: Embedding Leaderboard](https://huggingface.co/spaces/mteb/leaderboard)
+
+![](./img/HF-Embedding-Leaderboard.png)
+</details>
 
 **Scalability** with respect to the size of document corpus needs to be considered. 
 What if the application needs to store 100, 1000, or 1,000,000 medium size documents?
