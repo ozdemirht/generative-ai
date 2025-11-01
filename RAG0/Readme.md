@@ -217,7 +217,7 @@ There are [many embedding](https://docs.langchain.com/oss/python/integrations/te
 | Local        | No          | ? need machine       | EmbeddingGemma |          | ?       |      |
 
 <details>
-<title>Hugging Face: Embedding Leaderboard</title>
+<summary>Hugging Face: Embedding Leaderboard</summary>
 
 [Hugging Face: Embedding Leaderboard](https://huggingface.co/spaces/mteb/leaderboard)
 ![](./img/HF-Embedding-Leaderboard.png)
