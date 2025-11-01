@@ -435,7 +435,7 @@ in a secure hub (like [AWS Systems Manager Parameter Store](https://docs.aws.ama
 
 **Cost of change** is an important criteria to verify in each step of SDLC processes. 
 Our processes should be biased towards avoiding **cascaded changes** in these systems. 
-Therefore, (classics) loose coupling, configurability, extensibility, etc. software system attributes should be enforced (by Reviewer-LLM?).  
+Therefore, (classics) loose coupling, configurability, extensibility, etc. software system attributes should be enforced (by an LLM-as-a-Judge).  
 
 **Pace of change** in technical capabilities will drive the modernization activities as long as it is within the organization's cadence to absorb these changes. 
 If it becomes too frequent, then finding a good ROI to convince CFO to sign off these modernization efforts will be a challenge.
