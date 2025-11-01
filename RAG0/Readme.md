@@ -277,18 +277,19 @@ The bigger context increases tokens/query and latency because LLM needs to proce
 
 For instance, 5 nearest neighbours of given query are  
 
-	Index	Distance	Chunk	Embedding
-0	43	0.623361	prince does not spend much on colonies, for wi...	[0.058890715, 0.04274347, 0.09256141, 0.044749...
-1	42	0.802146	spot, disorders are seen as they spring up, an...	[0.079357, 0.061069474, 0.08273438, 0.02950769...
-2	221	0.928903	Never let any Government imagine that it can c...	[0.050540738, 0.10423061, 0.01961176, -0.04452...
-3	44	0.945794	ones they cannot; therefore the injury that is...	[0.009223385, 0.07131818, 0.052186664, 0.00611...
-4	64	0.956113	this is not occasioned by the little or abunda...	[0.013173358, 0.102018714, 0.061939694, -0.027...
+| 	 | Index	| Distance	| Chunk	| Embedding |
+|---|-------|-----------|-------|-----------|
+| 0	| 43	| 0.623361	| prince does not spend much on colonies, for wi...	| [0.058890715, 0.04274347, 0.09256141, 0.044749... | 
+| 1	 | 42	| 0.802146	| spot, disorders are seen as they spring up, an...	| [0.079357, 0.061069474, 0.08273438, 0.02950769... | 
+| 2	 | 221	| 0.928903	| Never let any Government imagine that it can c...	| [0.050540738, 0.10423061, 0.01961176, -0.04452... | 
+| 3	 | 44	| 0.945794	| ones they cannot; therefore the injury that is...	| [0.009223385, 0.07131818, 0.052186664, 0.00611... | 
+| 4 | 64	| 0.956113	| this is not occasioned by the little or abunda...	| [0.013173358, 0.102018714, 0.061939694, -0.027... | 
 
 This can be visualized as 
 
 ![Vector Store Search Illustration](./img/VS-Search.png)
 
-where yellow point the query, purple points are 5 nearest neighbours, the remaining points are the indexed chunks in the vetor database. 
+where yellow point is the query, purple points are 5 nearest neighbours, the remaining points are the indexed chunks in the vetor database. 
 (see [VS Retrieval with FAISS](./src/Retrieval_FAISS.ipynb) for code and details)
 
 **How to extract additional filtering conditions from user's query to guide retrieval?**
