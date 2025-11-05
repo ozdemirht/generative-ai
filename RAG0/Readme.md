@@ -451,7 +451,14 @@ Eventually, CFOs will figure out how to depreciate these investments.
 ## Advanced RAG
 
 Advanced RAG introduces additional steps to ingestion and inferencing pipelines for
+
 - Guardrails to redact PII data, refuse in-appropriate input/output, and transparency for actions taken.  
+  - **PII data**: Application should not leak PII data to hosted LLM. 
+    Therefore, an input sanitization component will process user's input to decide whether it is ok to submit to hosted LLM. 
+    For instance, Microsoft Presidio can detect phone number, email, address, name, etc. PII data. 
+  - **Hallucination**: Application should check LLM output before sharing with the user. The output should be grounded. 
+    For example, Natural Language Inference/Entailment can validate the output againsts the augments from vector store. See [Guardrails AI](https://www.guardrailsai.com/).  
+  - **Named Entity Recognition** and **Text to Topic classification** help to scrutinize LLM output. These may rely on hosted or fine-tuned LLMs.
 - Query re-writing to generate good completion by translating the user's prompt to an effective prompt. 
 
 
@@ -526,6 +533,8 @@ Answer:
  1. [Verbalized Sampling: How to Mitigate Mode Collapse and Unlock LLM Diversity](https://arxiv.org/abs/2510.01171)
  1. [Redis LangCache](https://redis.io/docs/latest/develop/ai/langcache/)
  1. [Self Query Retriever](https://medium.com/@danushidk507/rag-x-self-query-retriever-952dd55c68ed)
+ 1. [Provenance LLM](https://hub.guardrailsai.com/validator/guardrails/provenance_llm)
+
 
 ## Appendix
 
