@@ -275,7 +275,9 @@ a) it should be relevant to the given query, and
 b) it should not waste token budget and be aware of context_window size. 
 
 The bigger context increases tokens/query and latency because LLM needs to process more 
-(because time complexity is not linear with respect to the number of tokens). 
+(because attention mechanism's time complexity is not linear with respect to the number of tokens).
+Recent research on linear and sub-quadratic methods could make the input length less of a concern 
+while increasing inferencing/second and decreasing the capacity demand. 
 
 ![RAG Inferencing Flow](./img/RAG-inferencing.png)
 
@@ -347,6 +349,7 @@ The cost of operation has several components
     1. Number of input and output tokens in each call
     1. Input tokens is determined by the tokenized form of prompt that system submits to LLM provider. For instance, RAG prompt has 3 parts; instructions, context, and user's prompt/question. 
     1. Output tokens is determined by the system when calling to LLM provider. Application can limit the number of tokens to be generated. This is a parameter in API call. 
+    1. Input and Output Guardrails
  1. Testing during development
  1. Testing in deployment
  1. Maintenance
@@ -468,6 +471,22 @@ Advanced RAG introduces additional steps to ingestion and inferencing pipelines 
 | ![ARAG Ingestion](./img/ARAG-ingestion-flow.png) | ![ARAG Inference](./img/ARAG-inferencing.png) |
 
 These additions harden the system while improving the quality of responses for production.
+
+## Responsible AI
+ 
+There are many approaches are presented and these are not necessarily mutually exclusive. 
+
+| Method                    | Objective                                                                                                                                            |
+|---------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Prompt Engineering        | Objective is find the performant query to help LLM generate expected outputs.                                                                        |
+| RAG & Context Engineering | Objective is to augment prompt with additional context to help LLM generate expected outputs.                                                        |
+| Fine-Tuning               | Objective is to fine tune parameters of LLM, bias P(Y/X) distribution towards human preferences (RLHF), hence help LLM to generate expected outputs. |                                        |
+| Guardrails                | Objective is to sanitize *input* to LLM and *output* from LLM.                                                                                       | 
+
+Guardrails plays a pivotal role to validate both input before submitting to hosted LLM and output from LLM before sharing with the user/customer. 
+
+Solutions need to balance securing sensitive data vs reducing MTTR (by using logs) and monitoring cost of operations (by monitoring token consumption). 
+AOP solutions used today is applicable to collecting token consumption data, as an undifferentiated heavy lifting approach.  
 
 ## Summary
 
