@@ -474,7 +474,7 @@ These additions harden the system while improving the quality of responses for p
 
 ## Responsible AI
  
-There are many approaches are presented and these are not necessarily mutually exclusive. 
+There are many approaches to shape LLM output, and these are not necessarily mutually exclusive. 
 
 | Method                    | Objective                                                                                                                                            |
 |---------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
