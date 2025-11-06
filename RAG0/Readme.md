@@ -478,10 +478,10 @@ There are many approaches to shape LLM output, and these are not necessarily mut
 
 | Method                    | Objective                                                                                                                                            |
 |---------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Prompt Engineering        | Objective is find the performant query to help LLM generate expected outputs.                                                                        |
+| Prompt Engineering        | Objective is find the performant prompt to help LLM generate expected outputs.                                                                       |
 | RAG & Context Engineering | Objective is to augment prompt with additional context to help LLM generate expected outputs.                                                        |
 | Fine-Tuning               | Objective is to fine tune parameters of LLM, bias P(Y/X) distribution towards human preferences (RLHF), hence help LLM to generate expected outputs. |                                        |
-| Guardrails                | Objective is to sanitize *input* to LLM and *output* from LLM.                                                                                       | 
+| Guardrails                | Objective is to sanitize *input* to LLM and *output* from LLM (to help LLM generate expected outputs).                                               | 
 
 Guardrails plays a pivotal role to validate both input before submitting to hosted LLM and output from LLM before sharing with the user/customer. 
 
