@@ -459,7 +459,7 @@ Advanced RAG introduces additional steps to ingestion and inferencing pipelines 
     For instance, Microsoft Presidio can detect phone number, email, address, name, etc. PII data. 
   - **Hallucination**: Application should check LLM output before sharing with the user. The output should be grounded. 
     For example, Natural Language Inference/Entailment can validate the output againsts the augments from vector store. See [Guardrails AI](https://www.guardrailsai.com/).  
-  - **Named Entity Recognition** and **Text to Topic classification** help to scrutinize LLM output. These may rely on hosted or fine-tuned LLMs.
+  - **Named Entity Recognition** and **Text to Topic classification** help to scrutinize LLM output. These may rely on another LLM.
 - Query re-writing to generate good completion by translating the user's prompt to an effective prompt. 
 
 
