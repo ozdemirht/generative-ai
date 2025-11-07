@@ -455,8 +455,9 @@ Eventually, CFOs will figure out how to depreciate these investments.
 
 Advanced RAG introduces additional steps to ingestion and inferencing pipelines for
 
-- Guardrails to redact PII data, refuse in-appropriate input/output, jailbreaking, prompt injection, 
-  stay-on-the-topic, moderation (stay within brand/app guidelines), hallucination, syntax checks, etc. and transparency for actions taken.  
+- Guardrails to redact PII data, to refuse in-appropriate input/output, to prevent jailbreaking, to prevent prompt injection, 
+  to keep LLM outputs on the topic, moderation (stay within brand/app guidelines), to prevent hallucination, to validate expected output syntax, etc. 
+  and to be transparent about the actions taken on input or output.  
   - **PII data**: Application should not leak PII data to hosted LLM. 
     Therefore, an input sanitization component will process user's input to decide whether it is ok to submit to hosted LLM. 
     For instance, Microsoft Presidio can detect phone number, email, address, name, etc. PII data. 
@@ -476,12 +477,13 @@ These additions harden the system while improving the quality of responses for p
  
 There are many approaches to shape LLM output, and these are not necessarily mutually exclusive. 
 
-| Method                    | Objective                                                                                                                                            |
-|---------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Prompt Engineering        | Objective is find the performant prompt to help LLM generate expected outputs.                                                                       |
-| RAG & Context Engineering | Objective is to augment prompt with additional context to help LLM generate expected outputs.                                                        |
-| Fine-Tuning               | Objective is to fine tune parameters of LLM, bias P(Y/X) distribution towards human preferences (RLHF), hence help LLM to generate expected outputs. |                                        |
-| Guardrails                | Objective is to sanitize *input* to LLM and *output* from LLM (to help LLM generate expected outputs).                                               | 
+| Method                                                                   | Objective                                                                                                                                            |
+|--------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Inference Sampling Methods (Temperature, Top-K,Top-P, Min-P,Beam Search) | Objective of these parameters to help LLM generate expected outputs.                                                                                 |
+| Prompt Engineering                                                       | Objective is find the performant prompt to help LLM generate expected outputs.                                                                       |
+| RAG & Context Engineering                                                | Objective is to augment prompt with additional context to help LLM generate expected outputs.                                                        |
+| Fine-Tuning                                                              | Objective is to fine tune parameters of LLM, bias P(Y/X) distribution towards human preferences (RLHF), hence help LLM to generate expected outputs. |                                        |
+| Guardrails                                                               | Objective is to sanitize *input* to LLM and *output* from LLM (to help LLM generate expected outputs).                                               | 
 
 Guardrails plays a pivotal role to validate both input before submitting to hosted LLM and output from LLM before sharing with the user/customer. 
 
