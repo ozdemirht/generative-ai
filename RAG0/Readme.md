@@ -466,8 +466,10 @@ Advanced RAG introduces additional steps to ingestion and inferencing pipelines 
     Therefore, an input sanitization component will process user's input to decide whether it is ok to submit to hosted LLM. 
     For instance, [Microsoft Presidio](https://microsoft.github.io/presidio/) can detect PII data, such as phone number, email, address, name, etc. 
     [Presidio Anonymizer](https://microsoft.github.io/presidio/anonymizer/) supports most anonymization use cases such as redaction, tokenization, synthetic replacement, encryption. 
-  - **Hallucination**: Application should check LLM output before sharing with the user. The output should be **grounded**. One approach is to validate against the chunks in vector store (RAG). 
-    For example, Natural Language Inference/Entailment can validate the LLM output by using the augments from vector store. See [Guardrails AI](https://www.guardrailsai.com/).  
+  - **Hallucination**: Application should check LLM output before sharing with the user. The output should be **grounded**. 
+    One approach is to validate against the chunks in vector store (by using retrieval step in RAG to select chunks as ground truth). 
+    For example, Natural Language Inference/Entailment can validate the LLM output by using the augments from vector store. 
+    NLI classifies LLM output as **consistent** or **inconsistent** based on shared context. See [Guardrails AI](https://www.guardrailsai.com/).  
   - **Named Entity Recognition** and **Text to Topic classification** help to scrutinize LLM output. These may rely on another LLM.
 - Query re-writing to generate good completion by translating the user's prompt to an effective prompt. 
 
