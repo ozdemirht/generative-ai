@@ -484,18 +484,18 @@ These additions harden the system while improving the quality of responses for p
  
 There are many approaches to shape LLM output, and these are not necessarily mutually exclusive. 
 
-| Method                                                                   | Objective                                                                                                                                            |
-|--------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Inference Sampling Methods (Temperature, Top-K,Top-P, Min-P,Beam Search) | Objective of these parameters to help LLM generate expected outputs.                                                                                 |
-| Prompt Engineering                                                       | Objective is find the performant prompt to help LLM generate expected outputs.                                                                       |
-| RAG & Context Engineering                                                | Objective is to augment prompt with additional context to help LLM generate expected outputs.                                                        |
-| Fine-Tuning                                                              | Objective is to fine tune parameters of LLM, bias P(Y/X) distribution towards human preferences (RLHF), hence help LLM to generate expected outputs. |                                        |
-| Guardrails                                                               | Objective is to sanitize *input* to LLM and *output* from LLM (to help LLM generate expected outputs).                                               | 
+| Method                                                                   | Objective                                                                                                                                                        |
+|--------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Inference Sampling Methods (Temperature, Top-K,Top-P, Min-P,Beam Search) | Objective of these parameters to help LLM generate expected outputs.                                                                                             |
+| Prompt Engineering                                                       | Objective is find the performant prompt to help LLM generate expected outputs.                                                                                   |
+| RAG & Context Engineering                                                | Objective is to augment prompt with additional context to help LLM generate expected outputs.                                                                    |
+| Fine-Tuning                                                              | Objective is to fine tune parameters of LLM, bias P(Y/X) probability distribution towards human preferences (RLHF), hence help LLM to generate expected outputs. |                                        |
+| Guardrails                                                               | Objective is to sanitize *input* to LLM and *output* from LLM (to help LLM generate expected outputs).                                                           | 
 
 Guardrails plays a pivotal role to validate both input before submitting to hosted LLM and output from LLM before sharing with the user/customer. 
 
 Solutions need to balance securing sensitive data vs reducing MTTR (by using logs) and monitoring cost of operations (by monitoring token consumption). 
-AOP solutions used today is applicable to collecting token consumption data, as an undifferentiated heavy lifting approach.  
+AOP solutions used today is applicable to collecting token consumption data, as an undifferentiated heavy lifting.  
 
 ## Summary
 
