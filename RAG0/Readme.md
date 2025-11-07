@@ -375,6 +375,10 @@ These golden tests will include Q&A sessions with a hosted LLM.
 Due to increasing amount of tests, 
 LLM-Judge relying on the best (and expensive) model probably the best bet to produce a better completions. 
 
+### Evaluation Metrics
+[A list of metrics for evaluating LLM-generated content](https://learn.microsoft.com/en-us/ai/playbook/technology-guidance/generative-ai/working-with-llms/evaluation/list-of-eval-metrics)
+provides a good coverage on evaluating LLM output in many use cases.
+
 ## Failure Modes
 The RAG system should need to handle many operational challenges such as 
    1. how to handle rate limiting errors from hosted LLM.
@@ -462,8 +466,8 @@ Advanced RAG introduces additional steps to ingestion and inferencing pipelines 
     Therefore, an input sanitization component will process user's input to decide whether it is ok to submit to hosted LLM. 
     For instance, [Microsoft Presidio](https://microsoft.github.io/presidio/) can detect PII data, such as phone number, email, address, name, etc. 
     [Presidio Anonymizer](https://microsoft.github.io/presidio/anonymizer/) supports most anonymization use cases such as redaction, tokenization, synthetic replacement, encryption. 
-  - **Hallucination**: Application should check LLM output before sharing with the user. The output should be grounded. 
-    For example, Natural Language Inference/Entailment can validate the output againsts the augments from vector store. See [Guardrails AI](https://www.guardrailsai.com/).  
+  - **Hallucination**: Application should check LLM output before sharing with the user. The output should be **grounded**. One approach is to validate against the chunks in vector store (RAG). 
+    For example, Natural Language Inference/Entailment can validate the LLM output by using the augments from vector store. See [Guardrails AI](https://www.guardrailsai.com/).  
   - **Named Entity Recognition** and **Text to Topic classification** help to scrutinize LLM output. These may rely on another LLM.
 - Query re-writing to generate good completion by translating the user's prompt to an effective prompt. 
 
@@ -560,6 +564,7 @@ Answer:
  1. [Provenance LLM](https://hub.guardrailsai.com/validator/guardrails/provenance_llm)
  1. [NeMo Guardrails](https://github.com/NVIDIA-NeMo/Guardrails)
  1. [LLM Red Team](https://www.trydeepteam.com/docs/what-is-llm-red-teaming)
+ 1. [A list of metrics for evaluating LLM-generated content](https://learn.microsoft.com/en-us/ai/playbook/technology-guidance/generative-ai/working-with-llms/evaluation/list-of-eval-metrics)
 
 ## Appendix
 
