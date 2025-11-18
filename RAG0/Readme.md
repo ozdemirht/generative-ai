@@ -392,9 +392,9 @@ public class CalculatorTest {
     }
 }
 ```
-| Deterministic                   | LLM completion                                        |
-|---------------------------------|-------------------------------------------------------|
-| Assert.assertEquals(2, result); | Assert.assertEquals(generate_completion(prompt),???); |
+| Deterministic                    | LLM completion                                        |
+|----------------------------------|-------------------------------------------------------|
+| Assert.assertEquals(calculator.add(1, 1),2); | Assert.assertEquals(generate_completion(prompt),???); |
 
 How to enforce **controlled quality**? Assuming generate_completion(prompt) is good 95% of the time, 
 then how to quantify the risk/harm in 5% of the time (see [Going Bayes](https://share.vidyard.com/watch/wqUpv9CUAXj9cSrFzAQwQ3)) 
