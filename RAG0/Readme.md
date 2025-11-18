@@ -396,8 +396,21 @@ public class CalculatorTest {
 |---------------------------------|-------------------------------------------------------|
 | Assert.assertEquals(2, result); | Assert.assertEquals(generate_completion(prompt),???); |
 
+How to enforce **controlled quality**? Assuming generate_completion(prompt) is good 95% of the time, 
+then how to quantify the risk/harm in 5% of the time (see [Going Bayes](https://share.vidyard.com/watch/wqUpv9CUAXj9cSrFzAQwQ3)) 
+because the risk in 5% failure is 'contextual'. 
 
+When the QC depends on **LLM-as-a-Judge**, what will evaluate the quality of **LLM-as-a-Judge**? Human In The Loop (HITL). 
+What will improve the "evaluation prompt" of **LLM-as-a-Judge**? 
 
+Versioning of all artifacts as well as the configuration of all deployed components will have paramount 
+importance (in addition to configuration parameters of LLMs in the production). 
+
+When considering the versioning of golden set, need to consider that these tests instances will evolve over time. 
+We will introduce new tests while removing some tests. One needs to understand the impact of both actions 
+on the whole system in the production. Should we anticipate a cascading changes?
+
+Current DevOps best practices know how to secure configurations and artifacts. 
 
 ### Evaluation Metrics
 [A list of metrics for evaluating LLM-generated content](https://learn.microsoft.com/en-us/ai/playbook/technology-guidance/generative-ai/working-with-llms/evaluation/list-of-eval-metrics)
@@ -443,8 +456,9 @@ These insights will help us to decide where we will invest to improve the system
 
 DevOps evolved to MLOps, LLMOps and finally [AgenticOps](https://agenticops.org).
 
-Is the agentic graph following the intented execution flow?
+Is the agentic graph following the intended execution flow?
 
+Should there be agents monitoring logs, traces, as well as generations to constantly enforce guardrails? 
 
 ## Disaster Recovery
 
