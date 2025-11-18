@@ -373,7 +373,31 @@ Therefore, it is not preferable to have these preventive measures delaying the t
 
 These golden tests will include Q&A sessions with a hosted LLM. 
 Due to increasing amount of tests, 
-LLM-Judge relying on the best (and expensive) model probably the best bet to produce a better completions. 
+**LLM-as-a-Judge** relying on the best (and expensive) model probably the best bet to produce a better completions. 
+
+```commandline
+import org.junit.Assert;
+import org.junit.Test;
+
+// Test class for the Calculator
+public class CalculatorTest {
+
+    // Test method to check addition functionality
+    @Test
+    public void testAddition() {
+        Calculator calculator = new Calculator();
+        int result = calculator.add(1, 1);
+        // Verify that the result matches the expected value
+        Assert.assertEquals(2, result);
+    }
+}
+```
+| Deterministic                   | LLM completion                                        |
+|---------------------------------|-------------------------------------------------------|
+| Assert.assertEquals(2, result); | Assert.assertEquals(generate_completion(prompt),???); |
+
+
+
 
 ### Evaluation Metrics
 [A list of metrics for evaluating LLM-generated content](https://learn.microsoft.com/en-us/ai/playbook/technology-guidance/generative-ai/working-with-llms/evaluation/list-of-eval-metrics)
@@ -391,7 +415,7 @@ Today, most hosted LLM provides a stateless API.
 Therefore, application needs to maintain the state of session. 
 Should the application persist this state data after every change so that it could recover (like WAL files in database/Kafka)?
 
-## CICD and Ops
+## CICD 
 Automated deployment pipelines are well understood. 
 In addition to known (resource utilization metrics, 
 performance metrics p90/p95 latency, etc.), rate limiting, etc.), 
@@ -404,7 +428,7 @@ operations also needs to monitor
 - hosted LLM rate limiting errors, 
 - quality of response (assuming that the system is collecting feedback on the generated responses). 
 
-### Observability 
+### Ops and Observability 
 
 Trace of interactions within a session is important data 
 to understand the behavior of the system and improve each step. 
@@ -416,6 +440,11 @@ the observability tools will surface such information at very fine granularity.
 For instance, which application is consuming the most tokens, which sessions are consuming the most tokens, 
 which step in these flows is consuming the most token, etc.
 These insights will help us to decide where we will invest to improve the system's cost/performance.  
+
+DevOps evolved to MLOps, LLMOps and finally [AgenticOps](https://agenticops.org).
+
+Is the agentic graph following the intented execution flow?
+
 
 ## Disaster Recovery
 
