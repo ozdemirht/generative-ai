@@ -510,7 +510,7 @@ Therefore, (classics) loose coupling, configurability, extensibility, etc. softw
 **Pace of change** in technical capabilities will drive the modernization activities as long as it is within the organization's cadence to absorb these changes. 
 If it becomes too frequent, then finding a good ROI to convince CFO to sign off these modernization efforts will be a challenge.
 At this point, it will depend on the company's appetite to stay with the older stack. 
-Eventually, CFOs will figure out how to depreciate these investments. A stable tech stack will help to investment in agentic product development because any profit based business wants to delight their customers and employees so that it can increase its profits.
+Eventually, CFOs will figure out how to depreciate these investments. A stable tech stack will help to invest in agentic solution development because any for-profit market participant wants to delight their customers and employees so that it can increase its profits.
 
 ## Advanced RAG
 
