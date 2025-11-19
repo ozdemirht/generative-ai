@@ -396,12 +396,14 @@ public class CalculatorTest {
 |----------------------------------|-------------------------------------------------------|
 | Assert.assertEquals(calculator.add(1, 1),2); | Assert.assertEquals(generate_completion(prompt),???); |
 
-How to enforce **controlled quality**? Assuming generate_completion(prompt) is good 95% of the time, 
-then how to quantify the risk/harm in 5% of the time (see [Going Bayes](https://share.vidyard.com/watch/wqUpv9CUAXj9cSrFzAQwQ3)) 
+**Consistency** in LLMs means giving *the same or very similar answers* when asked the same prompt multiple times (see [How Reliable Are GPT-4o and LLAMA3.3-70B in Classifying Natural Language Requirements?](https://www.computer.org/csdl/magazine/so/2025/06/11012694/26WXWSecUGQ)). 
+How can we enforce **controlled quality**? For instance, assuming *generate_completion(prompt)* is good 95% of the time, 
+then how we can quantify the risk/harm in 5% of the time (see [Going Bayes](https://share.vidyard.com/watch/wqUpv9CUAXj9cSrFzAQwQ3)) 
 because the risk in 5% failure is 'contextual'. 
 
-When the QC depends on **LLM-as-a-Judge**, what will evaluate the quality of **LLM-as-a-Judge**? Human In The Loop (HITL). 
-What will improve the "evaluation prompt" of **LLM-as-a-Judge**? 
+When the QC depends on **LLM-as-a-Judge**, what will evaluate the quality of completions from **LLM-as-a-Judge**? 
+Human In The Loop (HITL). How can we scale? What will improve the "evaluation prompt" of **LLM-as-a-Judge** 
+because **LLM-as-a-Judge** needs to improve its completions iteratively (for instance, due to concept drift in LLMs and ML Models)? 
 
 Versioning of all artifacts as well as the configuration of all deployed components will have paramount 
 importance (in addition to configuration parameters of LLMs in the production). 
@@ -454,11 +456,13 @@ For instance, which application is consuming the most tokens, which sessions are
 which step in these flows is consuming the most token, etc.
 These insights will help us to decide where we will invest to improve the system's cost/performance.  
 
-DevOps evolved to MLOps, LLMOps and finally [AgenticOps](https://agenticops.org).
+DevOps evolved to MLOps, LLMOps and finally [AgenticOps](https://agenticops.org) or AIOps.
 
-Is the agentic graph following the intended execution flow?
-
-Should there be agents monitoring logs, traces, as well as generations to constantly enforce guardrails? 
+Is the agentic solution (let's say programmed in LangGraph) following the intended execution flow represented by a graph? 
+The premise is that the orchestrator will decide *how* to traverse the graph during the run-time assuming 
+that our LangGraph program specified the accurate and correct graph (like workflow with cyclic edges, petri-nets, timed petri-nets).  
+Should there be agents monitoring logs, traces, as well as generations constantly to enforce guardrails or 
+raise alarm when the orchestrator started to follow an unexpected path? 
 
 ## Disaster Recovery
 
@@ -474,20 +478,30 @@ As more of these workloads shipped to production,
 there will be more challenges and lessons learned and finally evolving best practices. 
 
 ## Continuous Maintenance
+
 Today, there are MLOps best practices to manage model drift. 
+Handling the concept drift in agentic solutions will be the same at **high level**.   
 
-LLM vendors will continue to offer new models at different cost/performance points. 
+LLM vendors will continue to offer new models at different cost/performance points as well as 
+concept drift may shift the expected input distribution. 
+If the solution is leveraging polyglot LLM approach, then there will be many LLMs in the system. 
+For instance, *Guardrail Agent*, sanitizing output, may leverage different LLM while *Quiz Generating Agent* is using another LLM. 
 
-For instance, what the scope of change is
-- when the chosen embedding needs to change, or 
-- when the chosen LLM model needs to change.
+For instance, the scope of change is
+- when the chosen embedding needs to change (*a better embedding model with different dimensions*), 
+- when the chosen LLM models need to change (*LLM model upgrade*),
+- when the prompts need to change (*found a better prompt*),
+- when the golden sets need to change, or
+- when the configuration parameters need to change. 
 
-Is moving to better and brighter LLM model the same as replacing our current machine with a brand new one?
-These changes will likely to require in-depth assessments before making a decision. 
+Is moving to a better and brighter LLM model the same as replacing our current machine with a brand new one?
+These changes will likely to require in-depth impact assessments considering dependencies (& cascading) before making a decision. 
+From the lens of system design, is it a viable approach to reuse *Guardrail Agent*, 
+analogous to creating an in-house agentic framework by Center Of Excellence? 
 
-Eventually, these should be reduced to managing 
-these changes as a system configuration data 
+Eventually, these should be reduced to managing these changes as a versioned system configuration data 
 in a secure hub (like [AWS Systems Manager Parameter Store](https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html)). 
+As always, a capability to rollback to a previous stable state is crucial in ops.  
 
 **Cost of change** is an important criteria to verify in each step of SDLC processes. 
 Our processes should be biased towards avoiding **cascaded changes** in these systems. 
