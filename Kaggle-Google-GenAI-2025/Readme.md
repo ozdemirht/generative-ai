@@ -8,3 +8,5 @@
 [kaggle-ai-google-capstone.ipynb](https://github.com/ozdemirht/generative-ai/blob/main/Kaggle-Google-GenAI-2025/kaggle-ai-google-capstone.ipynb)
 
 [Kaggle Notebook - kaggle-ai-google-capstone ](https://www.kaggle.com/code/ozdemirht/kaggle-ai-google-capstone)
+
+![Lesotho](./docs/Lesotho-Geohash.png)
