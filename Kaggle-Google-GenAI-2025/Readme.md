@@ -7,6 +7,8 @@ Through the [GenAI for Good Challenge](https://ieeeht.org/get-involved/funding-o
 
 ### Proposed Multi-Agent Solution
 
+![Multi-Agent Solution](./docs/Gemini_Generated_Image_small.png)
+
 [AI Farming Buddy in Lesotho](https://github.com/ozdemirht/generative-ai/blob/main/Kaggle-Google-GenAI-2025/kaggle-ai-google-capstone.ipynb) is a capstone project for [5-Day AI Agents Intensive Course with Google](https://www.kaggle.com/learn-guide/5-day-agents)
 
 ![Capstone Architecture](https://github.com/ozdemirht/generative-ai/blob/main/Kaggle-Google-GenAI-2025/docs/Capstone-Architecture-Diagram.png)
