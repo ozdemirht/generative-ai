@@ -29,9 +29,12 @@ YouTube Video : https://www.youtube.com/watch?v=1T2ivNFrKZE
   For instance, learning path has multiple modules based on resource documents in its knowledge base 
   ![](./img/HeartGuard-Learning-Path.png)
 
+  For instance, when CHW takes a quiz, HeartGuard evaluates the answer and presents the correct answer with **citation** so that CHW can train to recall what is in the guidelines. 
+  ![](./img/HeartGuard-Quiz.png)
+  
 - Next, (based on published [Relevant Resources](https://osaips.atlassian.net/wiki/external/NjkzOTYxZjIzZWJiNGUxYzlhYTBiMWE4OTE0OTViZWE)), restricted knowledge base to two documents by uploading these files to Google AI Studio project. I think that ingestion and indexing of these documents happened in the backend (to support RAG via vector database). 
 
-- Next, I thought that these two documents may not be updated frequently, then prompted [Google AI Studio](https://aistudio.google.com/apps?source=) to consider National Institutes of Health ([NIH](www.nih.gov)) publications when there is not enough information in the given documents. This should allow CH Workers to access the recent medical information about hypertension, prevention, and management (=> [constants.ts](./HeartGuard/constants.ts) added secondary source into its prompt).
+- Next, I thought that these two documents may not be updated frequently, then prompted [Google AI Studio](https://aistudio.google.com/apps?source=) to consider National Institutes of Health ([NIH](www.nih.gov)) publications when there is not enough information in the given documents. This should allow CHWs to access to the recent medical information about hypertension prevention and management practices (=> [constants.ts](./HeartGuard/constants.ts) added secondary source into its prompt).
   ![](./img/HeartGuard-Mentor.png)
 
 - Next, prompted to add **translation of English text responses to one of the local languages** spoken in Gambia.
