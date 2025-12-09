@@ -26,7 +26,7 @@ YouTube Video : https://www.youtube.com/watch?v=1T2ivNFrKZE
 - First, prompted to create a chatbot to provide hypertension knowledge for CH Workers.
 
 - Next, I asked for a **learning path**, training via **quiz** and **simulation**.
-  For instance, learning path has omse modules based on resource documents in its knowledge base 
+  For instance, learning path has multiple modules based on resource documents in its knowledge base 
   ![](./img/HeartGuard-Learning-Path.png)
 
 - Next, (based on published [Relevant Resources](https://osaips.atlassian.net/wiki/external/NjkzOTYxZjIzZWJiNGUxYzlhYTBiMWE4OTE0OTViZWE)), restricted knowledge base to two documents.
