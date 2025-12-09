@@ -82,6 +82,36 @@ YouTube Video : https://www.youtube.com/watch?v=1T2ivNFrKZE
   
 ![End of Session Feedback](./img/HeartGuard-Feedback-Screen-1.png "Feedback to CHW")
 
+## Details
+### Source Code 
+
+```
+..\KAGGLE-GOOGLE-AI-STUDIO\HEARTGUARD
+│   metadata.json
+│   types.ts
+│   constants.ts
+│   App.tsx
+│   knowledgeBase.ts
+│   package.json
+│   index.html
+│   index.tsx
+│   tsconfig.json
+│   vite.config.ts
+│   .env.local
+│   .gitignore
+│   README.md
+│
+├───services
+│       geminiService.ts
+│       patientData.ts
+│       mcpTools.ts
+│
+└───components
+        ChatMessage.tsx
+        ChatInput.tsx
+        ModeSelector.tsx
+```
+
 ## Summary
 
 - Considering the scope of [GenAI For Good](https://ieeeht.org/get-involved/funding-opportunities/genai-for-good/) [Challenge for Gambia](https://ieeeht.org/wp-content/uploads/2025/10/GenAI4GC-Fact-Sheets-13.pdf), this chatbot addressed some of these use cases for one persona. However, the speed of building something useful is impressive.
