@@ -33,6 +33,8 @@ YouTube Video : https://www.youtube.com/watch?v=1T2ivNFrKZE
 - Next, prompted to add **multiple patient profiles to Patient Simulator** so that CHW will have opportunity to practice with different patient profiles.
 - Finally, prompted to **provide feedback to CH Worker** after completing a patient simulator case so that CHW knows what was good, what needs to be improved, and what needs to be re-studied.
 
+![](./img/HeartGuard-Feedback-Screen-1.png "Feedback to CHW")
+
 ## Summary
 
 - Considering the scope of [GenAI For Good](https://ieeeht.org/get-involved/funding-opportunities/genai-for-good/) [Challenge for Gambia](https://ieeeht.org/wp-content/uploads/2025/10/GenAI4GC-Fact-Sheets-13.pdf), this chatbot addressed some of these use cases for one persona. However, the speed of building something useful is impressive.
