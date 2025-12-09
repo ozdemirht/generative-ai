@@ -64,7 +64,7 @@ YouTube Video : https://www.youtube.com/watch?v=1T2ivNFrKZE
     `
 ```
 - Finally, prompted to **provide feedback to CH Worker** after completing a patient simulator case so that CHW knows what was good, what needs to be improved, and what needs to be re-studied.
-
+  For instance, when I tested **Patient Simulator**, HeartGuard chatbot generated the following feedback after the simulator session. 
 ![End of Session Feedback](./img/HeartGuard-Feedback-Screen-1.png "Feedback to CHW")
 
 ## Summary
