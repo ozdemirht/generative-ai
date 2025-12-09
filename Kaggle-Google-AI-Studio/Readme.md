@@ -72,6 +72,9 @@ YouTube Video : https://www.youtube.com/watch?v=1T2ivNFrKZE
     - **The Unlock**: If the CHW identifies that Enalapril is NOT safe for the baby and refers you to a specialist to switch to a safe drug (like Methyldopa or Labetalol), be very grateful and agree to go immediately.
     `
 ```
+  An example interaction, 
+  | ![](./img/HeartGuard-Parent-Sim-1.png) | ![](./img/HeartGuard-Parent-Sim-2.png) | ![](./img/HeartGuard-Parent-Sim-3.png) |
+  
 - Finally, prompted to **provide feedback to CH Worker** after completing a patient simulator case so that CHW knows what was good, what needs to be improved, and what needs to be re-studied.
   For instance, when I tested **Patient Simulator**, HeartGuard chatbot generated the following feedback after the simulator session has ended.
   
