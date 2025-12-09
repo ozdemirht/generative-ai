@@ -23,7 +23,7 @@ YouTube Video : https://www.youtube.com/watch?v=1T2ivNFrKZE
 
 ## How?
 
-- First, prompted to create a chatbot to provide hypertension knowledge for CH Workers.
+- First, prompted to create a chatbot to provide hypertension knowledge for Community Health Workers (CHW).
 
 - Next, I asked for a **learning path**, training via **quiz** and **simulation**.
   For instance, learning path has multiple modules based on resource documents in its knowledge base 
