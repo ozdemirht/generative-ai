@@ -31,7 +31,8 @@ YouTube Video : https://www.youtube.com/watch?v=1T2ivNFrKZE
 - Next, prompted to add **translation of English text responses to one of the local languages** spoken in Gambia.
 - Next, prompted to update background colors.
 - Next, prompted to add **multiple patient profiles to Patient Simulator** so that CHW will have opportunity to practice with different patient profiles.
-  ---
+
+```
     age: 55,
     bp: "145/92 mmHg",
     scenario: "Grade 1 Hypertension. Eats a lot of canned soups and pickles (high sodium). Skeptical about medication.",
@@ -40,7 +41,7 @@ YouTube Video : https://www.youtube.com/watch?v=1T2ivNFrKZE
     - **The Diet Trap**: If the CHW gives generic diet advice (e.g., "eat less salt") WITHOUT asking you what you eat first, become defensive ("I don't put salt on my food!").
     - **The Unlock**: If the CHW asks what you ate recently or specifically asks about canned foods/sauces, admit to eating soup and be open to changing that specific habit.|
 
-  ---
+```
 
 - Finally, prompted to **provide feedback to CH Worker** after completing a patient simulator case so that CHW knows what was good, what needs to be improved, and what needs to be re-studied.
 
