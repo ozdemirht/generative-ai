@@ -3,8 +3,7 @@
 
 [Google DeepMind - Vibe Code with Gemini 3 Pro in AI Studio](https://www.kaggle.com/competitions/gemini-3/overview/tracks-and-awards)
 
-|----------------------------------------------------------------|------------------------------------------------------------|
-| ![Solution](./img/HeartGuard-Gambia-Gemini_Generated_Image_small.png)  | ![HeartGuard UI](./img/HeartGuard.png)                                  |
+| ![Solution](./img/HeartGuard-Gambia-Gemini_Generated_Image_small.png)  | ![HeartGuard UI](./img/HeartGuard.png)             |
 |----------------------------------------------------------------|------------------------------------------------------------|
 
 
