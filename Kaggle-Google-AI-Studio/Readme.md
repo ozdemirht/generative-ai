@@ -32,8 +32,8 @@ YouTube Video : https://www.youtube.com/watch?v=1T2ivNFrKZE
 
 ## Summary
 
-- Considering the scope of GenAI For Good Challenge for Gambia, this chatbot addressed some of these use cases for one persona. However, the speed of building something useful is impressive.
-- Although I just started utilizing Google AI Studio, I can easily predict how such tools will accelerate many steps in GenAI product development.
+- Considering the scope of [GenAI For Good](https://ieeeht.org/get-involved/funding-opportunities/genai-for-good/) Challenge for Gambia, this chatbot addressed some of these use cases for one persona. However, the speed of building something useful is impressive.
+- Although I just started utilizing [Google AI Studio](https://aistudio.google.com/apps?source=), I can easily predict how such tools will accelerate many steps in GenAI product development.
 
 ## References
 1. [Google AI Studio](https://aistudio.google.com/apps?source=)
