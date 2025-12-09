@@ -25,6 +25,8 @@ YouTube Video : https://www.youtube.com/watch?v=1T2ivNFrKZE
 
 - First, prompted to create a chatbot to provide hypertension knowledge for CH Workers.
 - Next, I asked for a **learning path**, training via **quiz** and **simulation**.
+  For instance, learning path has omse modules based on resource documents in its knowledge base 
+  ![](./img/HeartGuard-Learning-Path.png)
 - Next, (based on published [Relevant Resources](https://osaips.atlassian.net/wiki/external/NjkzOTYxZjIzZWJiNGUxYzlhYTBiMWE4OTE0OTViZWE)), restricted knowledge base to two documents.
 - Next, I thought that these two documents may not be updated frequently, then prompted [Google AI Studio](https://aistudio.google.com/apps?source=) to consider NIH publications when there is not enough information in the given documents. This should allow CH Workers to access the recent medical information about hypertension, prevention, and management (=> [constants.ts](./HeartGuard/constants.ts) added secondary source into its prompt).
   ![](./img/HeartGuard-Mentor.png)
