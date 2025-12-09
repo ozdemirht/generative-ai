@@ -31,8 +31,8 @@ YouTube Video : https://www.youtube.com/watch?v=1T2ivNFrKZE
 - Next, I thought that these two documents may not be updated frequently, then prompted [Google AI Studio](https://aistudio.google.com/apps?source=) to consider NIH publications when there is not enough information in the given documents. This should allow CH Workers to access the recent medical information about hypertension, prevention, and management (=> [constants.ts](./HeartGuard/constants.ts) added secondary source into its prompt).
   ![](./img/HeartGuard-Mentor.png)
 - Next, prompted to add a feature to **record a patient's progress** (=> Patient Records).
-  AI Studio created [PatientService](https://github.com/ozdemirht/generative-ai/blob/main/Kaggle-Google-AI-Studio/HeartGuard/services/patientData.ts) code with listPatients,
-  getPatientByName, getPatientById, registerPatient, recordVitals, scheduleAppointments API.
+  AI Studio created [PatientService](https://github.com/ozdemirht/generative-ai/blob/main/Kaggle-Google-AI-Studio/HeartGuard/services/patientData.ts) code with *listPatients*,
+  *getPatientByName*, *getPatientById*, *registerPatient*, *recordVitals*, *scheduleAppointments* API and storing these records  into *localstorage*. 
 
 - Next, prompted to add **translation of English text responses to one of the local languages** spoken in Gambia.
   ![](./img/HeartGuard-Mentor-Translates.png)
