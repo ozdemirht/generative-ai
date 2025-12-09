@@ -32,7 +32,7 @@ YouTube Video : https://www.youtube.com/watch?v=1T2ivNFrKZE
   ![](./img/HeartGuard-Mentor.png)
 - Next, prompted to add a feature to **record a patient's progress** (=> Patient Records).
   AI Studio created [PatientService](./HeartGuard/services/patientData.ts) code with *listPatients*,
-  *getPatientByName*, *getPatientById*, *registerPatient*, *recordVitals*, *scheduleAppointments* API and storing these records  into *localstorage*. [MCP Tools](.//HeartGuard/services/mcpTools.ts) defined these as function tool. 
+  *getPatientByName*, *getPatientById*, *registerPatient*, *recordVitals*, *scheduleAppointments* API and storing these records  into *localstorage*. [MCP Tools](.//HeartGuard/services/mcpTools.ts) defined these as function tool. [Gemini Service](../HeartGuard/services/geminiService.ts) handles LLM calls. 
 
 - Next, prompted to add **translation of English text responses to one of the local languages** spoken in Gambia.
   ![](./img/HeartGuard-Mentor-Translates.png)
