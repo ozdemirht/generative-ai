@@ -31,8 +31,9 @@ YouTube Video : https://www.youtube.com/watch?v=1T2ivNFrKZE
 - Next, prompted to add **translation of English text responses to one of the local languages** spoken in Gambia.
 - Next, prompted to update background colors.
 - Next, prompted to add **multiple patient profiles to Patient Simulator** so that CHW will have opportunity to practice with different patient profiles.
-
+  For instance, Alex is 55 year old male, and skeptical about medication.  
 ```
+    name: "Alex",
     age: 55,
     bp: "145/92 mmHg",
     scenario: "Grade 1 Hypertension. Eats a lot of canned soups and pickles (high sodium). Skeptical about medication.",
@@ -42,7 +43,19 @@ YouTube Video : https://www.youtube.com/watch?v=1T2ivNFrKZE
     - **The Unlock**: If the CHW asks what you ate recently or specifically asks about canned foods/sauces, admit to eating soup and be open to changing that specific habit.|
 
 ```
-
+  For instance, Aminata is 28 year old pregnant woman, and taking Enalapril daily.  
+```
+  name: "Aminata",
+    age: 28,
+    bp: "142/92 mmHg",
+    scenario: "3 months pregnant. Has had high blood pressure for 2 years. Currently taking Enalapril (an ACE inhibitor) daily from an old prescription.",
+    personality: "Anxious first-time mother. Very protective of the baby but assumes her current medicine is safe because a doctor gave it to her years ago.",
+    behavioralRules: `
+    - **The Safety Trap**: If the CHW tells you to "continue your medication" without asking what it is, say "Okay, good, I'll keep taking my Enalapril." (This is a FAIL for the CHW as ACEis are unsafe in pregnancy).
+    - **The Contraindication Test**: You will not mention the specific drug name unless asked "What medication are you taking?".
+    - **The Unlock**: If the CHW identifies that Enalapril is NOT safe for the baby and refers you to a specialist to switch to a safe drug (like Methyldopa or Labetalol), be very grateful and agree to go immediately.
+    `
+```
 - Finally, prompted to **provide feedback to CH Worker** after completing a patient simulator case so that CHW knows what was good, what needs to be improved, and what needs to be re-studied.
 
 ![End of Session Feedback](./img/HeartGuard-Feedback-Screen-1.png "Feedback to CHW")
