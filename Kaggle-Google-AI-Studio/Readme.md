@@ -29,7 +29,7 @@ YouTube Video : https://www.youtube.com/watch?v=1T2ivNFrKZE
   For instance, learning path has multiple modules based on resource documents in its knowledge base 
   ![](./img/HeartGuard-Learning-Path.png)
 
-  For instance, when CHW takes a quiz, HeartGuard evaluates the answer and presents the correct answer with citation so that CHW can train to recall what is in the guidelines. 
+  For instance, when CHW takes a quiz, HeartGuard evaluates the answer and presents the correct answer with **citation** so that CHW can train to recall what is in the guidelines. 
   ![](./img/HeartGuard-Quiz.png)
   
 - Next, (based on published [Relevant Resources](https://osaips.atlassian.net/wiki/external/NjkzOTYxZjIzZWJiNGUxYzlhYTBiMWE4OTE0OTViZWE)), restricted knowledge base to two documents by uploading these files to Google AI Studio project. I think that ingestion and indexing of these documents happened in the backend (to support RAG via vector database). 
