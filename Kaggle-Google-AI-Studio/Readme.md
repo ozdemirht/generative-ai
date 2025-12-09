@@ -36,8 +36,8 @@ Considering the scope of GenAI For Good Challenge for Gambia, this chatbot addre
 I just started to utilize Google AI Studio, and can easily predict that this will accelerate many steps in GenAI product development.
 
 ## References
-[Google AI Studio](https://aistudio.google.com/apps?source=)
-[HeartGuard Chatbot](https://ai.studio/apps/drive/1-QMrnEV0uD50o7Ob3NYxZertFehZgIIe?fullscreenApplet=true)
-[IEEE GenAI For Good](https://ieeeht.org/get-involved/funding-opportunities/genai-for-good/)
-[Use Case: AI-Chatbot for Prevention and Control of non-communicable diseases (NCDs) in The Gambia](https://ieeeht.org/get-involved/funding-opportunities/genai-for-good/health/)
+1. [Google AI Studio](https://aistudio.google.com/apps?source=)
+1. [HeartGuard Chatbot](https://ai.studio/apps/drive/1-QMrnEV0uD50o7Ob3NYxZertFehZgIIe?fullscreenApplet=true)
+1. [IEEE GenAI For Good](https://ieeeht.org/get-involved/funding-opportunities/genai-for-good/)
+1. [Use Case: AI-Chatbot for Prevention and Control of non-communicable diseases (NCDs) in The Gambia](https://ieeeht.org/get-involved/funding-opportunities/genai-for-good/health/)
 
