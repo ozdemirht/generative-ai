@@ -23,15 +23,26 @@ YouTube Video : https://www.youtube.com/watch?v=1T2ivNFrKZE
 
 ## How?
 
-- First, prompted to create a chatbot to provide hypertension knowledge for CH Workers.
+- First, prompted to create a chatbot to provide hypertension knowledge for Community Health Workers (CHW).
+
 - Next, I asked for a **learning path**, training via **quiz** and **simulation**.
-- Next, (based on published [Relevant Resources](https://osaips.atlassian.net/wiki/external/NjkzOTYxZjIzZWJiNGUxYzlhYTBiMWE4OTE0OTViZWE)), restricted knowledge base to two documents.
-- Next, I thought that these two documents may not be updated frequently, then prompted [Google AI Studio](https://aistudio.google.com/apps?source=) to consider NIH publications when there is not enough information in the given documents. This should allow CH Workers to access the recent medical information about hypertension, prevention, and management (=> [constants.ts](./HeartGuard/constants.ts) added secondary source into its prompt).
+  For instance, learning path has multiple modules based on resource documents in its knowledge base 
+  ![](./img/HeartGuard-Learning-Path.png)
+
+- Next, (based on published [Relevant Resources](https://osaips.atlassian.net/wiki/external/NjkzOTYxZjIzZWJiNGUxYzlhYTBiMWE4OTE0OTViZWE)), restricted knowledge base to two documents by uploading these files to Google AI Studio project. I think that ingestion and indexing of these documents happened in the backend (to support RAG via vector database). 
+
+- Next, I thought that these two documents may not be updated frequently, then prompted [Google AI Studio](https://aistudio.google.com/apps?source=) to consider National Institutes of Health ([NIH](www.nih.gov)) publications when there is not enough information in the given documents. This should allow CH Workers to access the recent medical information about hypertension, prevention, and management (=> [constants.ts](./HeartGuard/constants.ts) added secondary source into its prompt).
   ![](./img/HeartGuard-Mentor.png)
-- Next, prompted to add a feature to **record a patient's progress** (=> Patient Records).
+
 - Next, prompted to add **translation of English text responses to one of the local languages** spoken in Gambia.
   ![](./img/HeartGuard-Mentor-Translates.png)
+
+- Next, prompted to add a feature to **record a patient's progress** (=> Patient Records).
+  AI Studio created [PatientService](./HeartGuard/services/patientData.ts) code with *listPatients*,
+  *getPatientByName*, *getPatientById*, *registerPatient*, *recordVitals*, *scheduleAppointments* API and storing these records  into *localstorage*. [MCP Tools](.//HeartGuard/services/mcpTools.ts) defined these as function tool. [Gemini Service](../HeartGuard/services/geminiService.ts) handles LLM calls.
+
 - Next, prompted to update background colors.
+  
 - Next, prompted to add **multiple patient profiles to Patient Simulator** so that CHW will have opportunity to practice with different patient profiles.
   For instance, Alex is 55 year old male, and skeptical about medication.  
 ```
@@ -59,7 +70,8 @@ YouTube Video : https://www.youtube.com/watch?v=1T2ivNFrKZE
     `
 ```
 - Finally, prompted to **provide feedback to CH Worker** after completing a patient simulator case so that CHW knows what was good, what needs to be improved, and what needs to be re-studied.
-
+  For instance, when I tested **Patient Simulator**, HeartGuard chatbot generated the following feedback after the simulator session has ended.
+  
 ![End of Session Feedback](./img/HeartGuard-Feedback-Screen-1.png "Feedback to CHW")
 
 ## Summary
