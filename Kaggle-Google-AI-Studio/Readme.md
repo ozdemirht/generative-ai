@@ -1,8 +1,9 @@
 # Community Health Workers (CHW) Hypertension Mentor in Gambia
 ## HeartGuard Hypertension CHW Assistant
 
-
 [Google DeepMind - Vibe Code with Gemini 3 Pro in AI Studio](https://www.kaggle.com/competitions/gemini-3/overview/tracks-and-awards)
+
+![](./img/HeartGuard-Gambia-Gemini_Generated_Image_small.png)
 
 ## Why?
 
