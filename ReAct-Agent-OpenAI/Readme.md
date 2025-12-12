@@ -12,7 +12,7 @@ Current code leverages OpenAI Assistant (needs to be migrated to Response API)
 #### Setup
 
 
-#### Directory Structure and files
+#### Directory structure and files
 
 
 ### References
