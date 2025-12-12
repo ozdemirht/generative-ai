@@ -1,0 +1,27 @@
+{
+  "name": "coursera",
+  "version": "1.0.0",
+  "description": "ReAct Agent Project",
+  "keywords": [],
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx tsc && node ./dist/index.js",
+    "compile": "npx tsc"
+  },
+  "dependencies": {
+    "@massive.com/client-js": "^10.1.0",
+    "axios": "^1.13.2",
+    "dotenv": "^16.6.1",
+    "inquirer": "^8.2.7",
+    "modern-async": "^1.1.5",
+    "openai": "^4.104.0"
+  },
+  "devDependencies": {
+    "@types/inquirer": "^9.0.9",
+    "@types/node": "^25.0.1",
+    "typescript": "^5.3.3"
+  }
+}
