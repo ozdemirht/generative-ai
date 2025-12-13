@@ -27,7 +27,14 @@ Generate package.json
 Generate tsconfig.json
 
 #### Directory structure and files
-
+'''
+│
+└───src
+        create_vs.ts
+        index.ts
+        list_vs.ts
+        structure.ts
+'''
 
 ### References
 
