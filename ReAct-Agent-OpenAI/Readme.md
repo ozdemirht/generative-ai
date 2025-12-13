@@ -22,6 +22,9 @@ Install Misc packages
 axios
 modern-asycn
 
+Generate package.json
+
+Generate tsconfig.json
 
 #### Directory structure and files
 
