@@ -11,6 +11,17 @@ Current code leverages OpenAI Assistant (needs to be migrated to Response API)
 
 #### Setup
 
+Install Node.js
+
+Install Typescript
+
+Install OpenAI
+
+Install Misc packages
+
+axios
+modern-asycn
+
 
 #### Directory structure and files
 
